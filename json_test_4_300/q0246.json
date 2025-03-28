@@ -1,0 +1,225 @@
+{
+    "id": "q0246",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "末",
+    "context": "「是月之末。」",
+    "possible_sense_labels": [
+        "1: 事物的最後階段。",
+        "2: 最後的。",
+        "3: 不重要、非根本的事物。",
+        "4: 卑微的、不重要的。",
+        "5: 元雜劇裡扮演中年男子的腳色，為後來的「生」。",
+        "6: 物體的尾端、頂梢。",
+        "7: 語氣詞。",
+        "8: 碎屑、細粉。",
+        "9: 後。與「前」相對。",
+        "10: 沒。"
+    ],
+    "origin": "禮記．月令",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:01:42",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:08:33",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:51:27",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:38",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:38",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:01:42",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:08:34",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:51:28",
+                                "answer": "10"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:40",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "交",
+                        "context": "「其九月、十月之交乎？」",
+                        "correct_sense": "相會的時候或地方。"
+                    },
+                    {
+                        "character": "城",
+                        "context": "「是月，城西寧。」",
+                        "correct_sense": "築城。"
+                    },
+                    {
+                        "character": "迫",
+                        "context": "「涉旬月，迫冬季。」",
+                        "correct_sense": "接近。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:01:42",
+                                "answer": "10"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:08:35",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:51:28",
+                                "answer": "10"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:44",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:49:44",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:35",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:38",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:35",
+                                "answer": "7"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:38",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:35",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:39:38",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

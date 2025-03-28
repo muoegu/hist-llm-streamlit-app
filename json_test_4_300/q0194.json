@@ -1,0 +1,202 @@
+{
+    "id": "q0194",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "脆",
+    "context": "「弦索緊快管聲脆，急曲碎拍聲相連。」",
+    "possible_sense_labels": [
+        "1: 不堅韌、容易破碎的。",
+        "2: 柔弱禁不起打擊。",
+        "3: 食物鬆酥，容易咬碎。",
+        "4: 行事爽快、不拖泥帶水。",
+        "5: 聲音清越響亮。"
+    ],
+    "origin": "唐．顧雲．池陽醉歌贈匡廬處士姚巖傑詩",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:49",
+                                "answer": "2"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:27:36",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:58:56",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:55",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:55",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:49",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:27:36",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:58:57",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:57",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:57",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "曲",
+                        "context": "「一曲清歌，暫引櫻桃破。」",
+                        "correct_sense": "量詞。計算歌曲、樂曲的單位。"
+                    },
+                    {
+                        "character": "塵",
+                        "context": "「樂遊原上清秋節，咸陽古道音塵絕。」",
+                        "correct_sense": "蹤跡、事跡。"
+                    },
+                    {
+                        "character": "曲",
+                        "context": "如：「歌曲」、「小曲」、「舞曲」、「曲高和寡」。",
+                        "correct_sense": "樂歌。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:50",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:27:38",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:58:58",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:59",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:41:59",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "5",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:49:11",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:49:14",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:49:11",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:49:14",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

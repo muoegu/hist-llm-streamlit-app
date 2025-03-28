@@ -1,0 +1,174 @@
+{
+    "id": "q0060",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "廂",
+    "context": "「相公需教把火來放在弓廂裡，不住的焙，方好。」",
+    "possible_sense_labels": [
+        "1: 箱篋。",
+        "2: 邊、旁、方面。多用於舊小說、戲曲。",
+        "3: 戲院等娛樂場所裡另外隔間的特別座位。",
+        "4: 正屋兩側的房間。",
+        "5: 靠近城市的地區。"
+    ],
+    "origin": "水滸傳．第一○三回",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:33",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:33:59",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:01:27",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:56:58",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:56:58",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:33",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:33:59",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:01:28",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:57:00",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:57:00",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:34",
+                                "answer": "5"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:34:00",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:01:28",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:57:01",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:57:01",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:53:15",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:53:15",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

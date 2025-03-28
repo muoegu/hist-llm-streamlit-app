@@ -1,0 +1,224 @@
+{
+    "id": "q0291",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "抱",
+    "context": "如：「一抱草」、「一抱書」。",
+    "possible_sense_labels": [
+        "1: 量詞。計算兩臂可圍持的單位。",
+        "2: 懷藏在內。",
+        "3: 養育。",
+        "4: 拋擲、丟棄。",
+        "5: 孵化。",
+        "6: 摟持，用雙手合圍。",
+        "7: 胸懷、志趣。",
+        "8: 守護。",
+        "9: 環繞。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:31",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:25:16",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:55",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:29",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:29",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:31",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:25:17",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:55",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:31",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:31",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "繞",
+                        "context": "如：「繞場一周」、「繞圈子」。",
+                        "correct_sense": "圍著轉動。"
+                    },
+                    {
+                        "character": "記",
+                        "context": "如：「一記悶棍」、「給你一記右勾拳。」",
+                        "correct_sense": "量詞。計算敲擊次數的單位。"
+                    },
+                    {
+                        "character": "論",
+                        "context": "如：「一概而論」、「相提並論」。",
+                        "correct_sense": "敘述、陳述。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:31",
+                                "answer": "7"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:25:17",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:56",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:33",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:42:33",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:39",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:42",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:39",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:42",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:39",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:42",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

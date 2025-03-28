@@ -1,0 +1,222 @@
+{
+    "id": "q0248",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "赫",
+    "context": "「王赫斯怒，爰整其旅。」",
+    "possible_sense_labels": [
+        "1: 顯耀。",
+        "2: 盛紅的樣子。",
+        "3: 怒。",
+        "4: 明亮。",
+        "5: 恫嚇、恐嚇。",
+        "6: 分解。",
+        "7: 顯明、盛大。"
+    ],
+    "origin": "詩經．大雅．皇矣",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:25",
+                                "answer": "4"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:24:09",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:28",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:34",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:34",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:25",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:24:10",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:30",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:36",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:36",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "按",
+                        "context": "「爰整其旅，以按徂旅。」",
+                        "correct_sense": "抑止、擱置。"
+                    },
+                    {
+                        "character": "容",
+                        "context": "「振鷺于飛，于彼西雝。我客戾止，亦有斯容。」",
+                        "correct_sense": "面貌。"
+                    },
+                    {
+                        "character": "步",
+                        "context": "「王朝步自周，于征伐商。」",
+                        "correct_sense": "行、走，用腳走路。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:03:25",
+                                "answer": "5"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:24:10",
+                                "answer": "6"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:57:30",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:37",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:37",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:00",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:03",
+                                "answer": "8"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:00",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:03",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:00",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:47:03",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

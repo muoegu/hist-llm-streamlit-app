@@ -1,0 +1,234 @@
+{
+    "id": "q0269",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "而",
+    "context": "「嗟爾朋友，予豈不知而作！」",
+    "possible_sense_labels": [
+        "1: 然而、但是、卻。表轉折之意。",
+        "2: 才、始。表時間。",
+        "3: 並且。",
+        "4: 能、可以。",
+        "5: 以。",
+        "6: 至、到。",
+        "7: 猶。",
+        "8: 我。",
+        "9: 用於形容詞或副詞的語尾，無義。",
+        "10: 則、就。",
+        "11: 和、與。",
+        "12: 你。",
+        "13: 之、的。",
+        "14: 用於句首，相當於「豈」、「難道」。",
+        "15: 兩頰上的毛。",
+        "16: 尚且。",
+        "17: 用於句末，相當於「兮」、「罷了」。",
+        "18: 因而、所以。",
+        "19: 如、若。"
+    ],
+    "origin": "詩經．大雅．桑柔",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:47",
+                                "answer": "16"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:35:54",
+                                "answer": "number"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:02:06",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:23",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:23",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:47",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:36:04",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:02:06",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:25",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:25",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "哀",
+                        "context": "「人主胡可以不務哀士，士其難知，唯博之為可。」",
+                        "correct_sense": "愛惜。"
+                    },
+                    {
+                        "character": "士",
+                        "context": "「富而可求也，雖執鞭之士，吾亦為之。」",
+                        "correct_sense": "職業、工作。"
+                    },
+                    {
+                        "character": "謬",
+                        "context": "「乃引『天亡我，非用兵之罪也』，豈不謬哉！」",
+                        "correct_sense": "不實的、荒唐的。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:04:47",
+                                "answer": "12"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:36:19",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 14:02:08",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:26",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:43:26",
+                                "answer": "18"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "12",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:24",
+                                "answer": "16"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:32",
+                                "answer": "15"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:24",
+                                "answer": "15"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:32",
+                                "answer": "15"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:24",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:54:32",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

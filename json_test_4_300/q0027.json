@@ -1,0 +1,222 @@
+{
+    "id": "q0027",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "鼎",
+    "context": "「近者漢之衰末，三家鼎立。」",
+    "possible_sense_labels": [
+        "1: 方、正。",
+        "2: 大。",
+        "3: 比喻三公、宰相、重臣等高位。",
+        "4: 古代傳國的寶器。相傳夏禹鑄九鼎以為傳受帝位的重器。",
+        "5: 古代用來烹煮食物的金屬器具。圓腹、三足兩耳，亦有四足的方鼎。盛行於商、周時代。",
+        "6: 鼎有三足，引申為三方並立。",
+        "7: 古代烹殺罪人的刑具。"
+    ],
+    "origin": "三國志．卷六十一．吳書．陸凱傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:13",
+                                "answer": "6"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:13:37",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:53:24",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:48",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:48",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:13",
+                                "answer": "6"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:13:38",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:53:25",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:50",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:50",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "軌",
+                        "context": "「周道既壞，兵車之軌交於天下，而罕知侵伐之端焉。」",
+                        "correct_sense": "車行的痕跡。"
+                    },
+                    {
+                        "character": "臣",
+                        "context": "「兵甲之強，壹毀魏氏之威，而欲以力臣天下之主。」",
+                        "correct_sense": "統率、使之服從而為臣。"
+                    },
+                    {
+                        "character": "遊",
+                        "context": "「張良受黃石之符，誦三略之說，以遊於群雄。」",
+                        "correct_sense": "說服。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:13",
+                                "answer": "6"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:13:38",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:53:26",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:52",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:51:52",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "6",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:41:59",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:42:02",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:41:59",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:42:02",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:41:59",
+                                "answer": "7"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:42:02",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

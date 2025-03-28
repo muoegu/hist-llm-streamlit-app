@@ -1,0 +1,226 @@
+{
+    "id": "q0214",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "所",
+    "context": "如：「他的作品為一般青年人所喜愛。」",
+    "possible_sense_labels": [
+        "1: 約略計算之詞。多置於數量、單位之後。",
+        "2: 表示疑問。相當於「何」、「什麼」。",
+        "3: 與「為」或「被」合用，表示被動的意思。",
+        "4: 相當於「尚」、「還」。",
+        "5: 虛字。置在動詞前，暗示動作達到的事物。",
+        "6: 表示指示。相當於「此」、「這」。",
+        "7: 機關或機構的名稱。",
+        "8: 恰當的位置。",
+        "9: 假設、如果。",
+        "10: 地方、處所。",
+        "11: 量詞。計算建築物的單位。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:44",
+                                "answer": "10"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:18:10",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:55:04",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:09",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:09",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "酸",
+                        "context": "如：「酸梅」、「這青蘋果又酸又澀，實在難以下嚥。」",
+                        "correct_sense": "水果或食品的味道酸澀。"
+                    },
+                    {
+                        "character": "式",
+                        "context": "如：「格式」、「款式」。",
+                        "correct_sense": "規格、樣式。"
+                    },
+                    {
+                        "character": "俾",
+                        "context": "「日月所燭，罔不率俾。」",
+                        "correct_sense": "服從。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:45",
+                                "answer": "11"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:18:11",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:55:10",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:10",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:10",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_guwenBERT": {
+                "examples": [
+                    {
+                        "character": "通",
+                        "context": "如：「好逸惡勞是一般人的通病。」",
+                        "correct_sense": "共同的。"
+                    },
+                    {
+                        "character": "差",
+                        "context": "如：「成績差」、「他的文章太差了。」",
+                        "correct_sense": "不好。"
+                    },
+                    {
+                        "character": "少",
+                        "context": "如：「稀少」、「和平日相比，她今天的話好像少了一點。」",
+                        "correct_sense": "不多。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:02:45",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:18:21",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-27 13:55:12",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:13",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-27 22:39:13",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:16",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:20",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:16",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:20",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:16",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-27 12:44:20",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
