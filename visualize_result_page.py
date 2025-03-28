@@ -172,7 +172,7 @@ def visualize_result_page():
     st.title("WSD Result Visualization")
 
     # ✅ ラジオボタンでフォルダ選択
-    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300"])
+    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300", "json_test_7_300"])
 
     df_details, df_accuracy, summary_info = load_json_files(folder_input)
 

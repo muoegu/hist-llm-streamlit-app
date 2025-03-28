@@ -1,0 +1,96 @@
+{
+    "id": "q0230",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "頭",
+    "context": "「小張乙道：『討頭的，拾錢的，和那把門的，都被他打倒在裡面。』」",
+    "possible_sense_labels": [
+        "1: 事情的端始或結束點。",
+        "2: 賭博或交易中所抽取的錢財。",
+        "3: 首領。",
+        "4: 頂端或末稍。",
+        "5: 最前的。",
+        "6: 物體殘餘的部分。",
+        "7: 人或動物脖子以上的部分。",
+        "8: 在先的。",
+        "9: 人的代稱。",
+        "10: 頭髮或髮式。"
+    ],
+    "origin": "水滸傳．第三十八回",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "頭",
+                        "context": "「小張乙道：『討頭的，拾錢的，和那把門的，都被他打倒在裡面。』」",
+                        "correct_sense": "賭博或交易中所抽取的錢財。"
+                    },
+                    {
+                        "character": "採",
+                        "context": "「眾人那個採他，一味亂打。」",
+                        "correct_sense": "理會。"
+                    },
+                    {
+                        "character": "蠲",
+                        "context": "「如這些無頭緒，荒亂推託偷閒竊取等弊，次日一概都蠲了。」",
+                        "correct_sense": "免除。如；「蠲免」、「蠲除」。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "2",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:46",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:46",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

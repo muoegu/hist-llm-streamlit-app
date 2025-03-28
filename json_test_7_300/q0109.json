@@ -1,0 +1,91 @@
+{
+    "id": "q0109",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "顏",
+    "context": "如：「五顏六色」。",
+    "possible_sense_labels": [
+        "1: 色彩。",
+        "2: 門堂上的匾額。",
+        "3: 額頭。",
+        "4: 臉色、面容。",
+        "5: 面子、名譽。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "色",
+                        "context": "如：「五顏六色」、「五光十色」、「花色鮮豔」。",
+                        "correct_sense": "物體表面的色彩。"
+                    },
+                    {
+                        "character": "色",
+                        "context": "如：「貨色齊全」、「形形色色」、「花色繁多」。",
+                        "correct_sense": "種類、式樣。"
+                    },
+                    {
+                        "character": "悅",
+                        "context": "如：「和顏悅色」。",
+                        "correct_sense": "愉快、高興。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:29:09",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:29:09",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

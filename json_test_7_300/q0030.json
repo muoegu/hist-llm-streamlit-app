@@ -1,0 +1,102 @@
+{
+    "id": "q0030",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "咽",
+    "context": "「被張金鳳罵得眼淚往肚子裡咽，被那王八奶奶兒嘔得肝火往頂門上噴。」",
+    "possible_sense_labels": [
+        "1: 聲音悲淒滯塞。",
+        "2: 阻塞、填塞。",
+        "3: 吞嚥。",
+        "4: 突然停住不說。"
+    ],
+    "origin": "兒女英雄傳．第八回",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "咽",
+                        "context": "「被張金鳳罵得眼淚往肚子裡咽，被那王八奶奶兒嘔得肝火往頂門上噴。」",
+                        "correct_sense": "吞嚥。"
+                    },
+                    {
+                        "character": "嘔",
+                        "context": "「把個老頭子嘔的嚷一陣，鬧一陣。」",
+                        "correct_sense": "招惹、引人生氣。"
+                    },
+                    {
+                        "character": "觸",
+                        "context": "「婆婆耐不過，從頭將打先生、罵媒人、觸夫主、毀公婆，一一苦訴一遍。」",
+                        "correct_sense": "冒犯、干犯。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:25:59",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:00",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:25:59",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:00",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

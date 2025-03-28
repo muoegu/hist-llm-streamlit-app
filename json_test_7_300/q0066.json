@@ -1,0 +1,103 @@
+{
+    "id": "q0066",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "牙",
+    "context": "「牙，言以牙相噬。」",
+    "possible_sense_labels": [
+        "1: 象牙的簡稱。",
+        "2: 官署、衙門。",
+        "3: 買賣時居中的介紹人。",
+        "4: 人或動物口腔中，用來研磨、咀嚼食物的器官。",
+        "5: 咬。"
+    ],
+    "origin": "高誘．注",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "牙",
+                        "context": "「牙，言以牙相噬。」",
+                        "correct_sense": "咬。"
+                    },
+                    {
+                        "character": "剛",
+                        "context": "「齒利者齧，爪剛者決。」",
+                        "correct_sense": "堅硬的。"
+                    },
+                    {
+                        "character": "齒",
+                        "context": "「齒，年也。」",
+                        "correct_sense": "年齡。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "5",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:43",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:45",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:43",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:31:45",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

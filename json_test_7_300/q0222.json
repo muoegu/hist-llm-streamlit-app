@@ -1,0 +1,106 @@
+{
+    "id": "q0222",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "面",
+    "context": "如：「路面」、「水面」、「地面」、「封面」。",
+    "possible_sense_labels": [
+        "1: 方向、部位。",
+        "2: 向著、對著。",
+        "3: 當面。",
+        "4: 景況、情況。",
+        "5: 見、相見。",
+        "6: 物體的外表或上部的一層。",
+        "7: 臉部。",
+        "8: 幾何學上稱線在空間移動而成的形跡，有長、寬度而無厚度。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "面",
+                        "context": "如：「路面」、「水面」、「地面」、「封面」。",
+                        "correct_sense": "物體的外表或上部的一層。"
+                    },
+                    {
+                        "character": "覆",
+                        "context": "如：「覆蓋」。",
+                        "correct_sense": "遮蓋。"
+                    },
+                    {
+                        "character": "面",
+                        "context": "如：「平面」。",
+                        "correct_sense": "幾何學上稱線在空間移動而成的形跡，有長、寬度而無厚度。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "6",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:30:31",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:30:34",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:30:31",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:30:34",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

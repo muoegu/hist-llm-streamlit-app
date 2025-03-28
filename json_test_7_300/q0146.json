@@ -1,0 +1,103 @@
+{
+    "id": "q0146",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "眼",
+    "context": "「他起初還想賴，後來被家兄點了兩句眼，他無話說了。」",
+    "possible_sense_labels": [
+        "1: 關鍵、要點。",
+        "2: 孔穴。",
+        "3: 量詞。計算眼睛看的次數的單位。",
+        "4: 下圍棋時，無棋子的空處稱為「眼」。",
+        "5: 目，動物的視覺器官。"
+    ],
+    "origin": "官場現形記．第三十六回",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "眼",
+                        "context": "「他起初還想賴，後來被家兄點了兩句眼，他無話說了。」",
+                        "correct_sense": "關鍵、要點。"
+                    },
+                    {
+                        "character": "問",
+                        "context": "「後來聽見你兄弟問了死罪，他雖哭了一場，以後倒擦脂抹粉的起來。」",
+                        "correct_sense": "審訊、判決。"
+                    },
+                    {
+                        "character": "怯",
+                        "context": "「那賣水煙的一聽這話，就知道這位爺是個怯公子哥兒，便低了頭出去了。」",
+                        "correct_sense": "外表或風度不大方、土土的。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:52",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:54",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:52",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:26:54",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "id": "q0078",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "首",
+    "context": "「北首燕路，而後遣辯士奉咫尺之書。」",
+    "possible_sense_labels": [
+        "1: 領袖、帶頭的人。",
+        "2: 朝向。",
+        "3: 頭、腦袋。",
+        "4: 要領。",
+        "5: 最高的、第一的。",
+        "6: 量詞。計算詩、詞、歌曲等的單位。",
+        "7: 開端、開始。",
+        "8: 方、邊。",
+        "9: 出面檢舉告發或自陳罪狀。",
+        "10: 開始、最先的。"
+    ],
+    "origin": "史記．卷九十二．淮陰侯傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "旌",
+                        "context": "「旌，游車載旌，析羽注旄首，所以精進士卒。」",
+                        "correct_sense": "一種旗杆上裝飾著五彩羽毛的旗子。"
+                    },
+                    {
+                        "character": "策",
+                        "context": "「吾於武成，取二三策而已矣。」",
+                        "correct_sense": "古代以竹簡記事然後連編成策。"
+                    },
+                    {
+                        "character": "貨",
+                        "context": "如：「笨貨」、「蠢貨」、「窩囊貨」。",
+                        "correct_sense": "罵人的話。相當於「東西」。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "心",
+                        "context": "「東望於邑，裁書敘心。」",
+                        "correct_sense": "思想、意念、感情。"
+                    },
+                    {
+                        "character": "函",
+                        "context": "「荊軻奉樊於期頭函，而秦舞陽奉地圖柙，以次進。」",
+                        "correct_sense": "匣、盒子。"
+                    },
+                    {
+                        "character": "遺",
+                        "context": "「表然其言，先遣人以書遺譚。」",
+                        "correct_sense": "贈送、給予。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "2",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:21:40",
+                                "answer": "8"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:21:42",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 08:21:40",
+                                "answer": "10"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 08:21:42",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
