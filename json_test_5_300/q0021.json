@@ -1,0 +1,137 @@
+{
+    "id": "q0021",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "驗",
+    "context": "「無參驗而必之者，愚也；弗能必而據之者，誣也。」",
+    "possible_sense_labels": [
+        "1: 病徵。",
+        "2: 察看、檢查。",
+        "3: 結果與所預言相合。",
+        "4: 審核、證實。",
+        "5: 預期的效果，或與預言相合的事實。",
+        "6: 憑證、證據。"
+    ],
+    "origin": "韓非子．顯學",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:33",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:33",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:35",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:35",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "知",
+                        "context": "「自謂才能宜參權要，既不見知，常懷慎惋。」",
+                        "correct_sense": "招待、禮遇、賞識。"
+                    },
+                    {
+                        "character": "信",
+                        "context": "「人而無信，不知其可也。」",
+                        "correct_sense": "誠實不欺。"
+                    },
+                    {
+                        "character": "而",
+                        "context": "「人而無信，不知其可也。」",
+                        "correct_sense": "如、若。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:36",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:06:36",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "6",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:40:55",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:40:55",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

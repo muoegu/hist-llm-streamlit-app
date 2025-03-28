@@ -1,0 +1,140 @@
+{
+    "id": "q0236",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "讓",
+    "context": "如：「別管他，讓他去吧！」",
+    "possible_sense_labels": [
+        "1: 拒絕。",
+        "2: 躲避。",
+        "3: 謙退。",
+        "4: 放棄自己的權利給別人。",
+        "5: 任、隨、允許。",
+        "6: 使、令。",
+        "7: 把自己的東西轉給別人。",
+        "8: 譴責。",
+        "9: 被。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:40",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:40",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:42",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:42",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "管",
+                        "context": "如：「別管他，我們先走。」",
+                        "correct_sense": "理會、顧慮。"
+                    },
+                    {
+                        "character": "只",
+                        "context": "如：「只管去做」。",
+                        "correct_sense": "儘。"
+                    },
+                    {
+                        "character": "別",
+                        "context": "如：「別走！」、「別生氣！」、「別打岔！」、「別理她！」",
+                        "correct_sense": "不要。表勸阻或禁止的意思。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:43",
+                                "answer": "5"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:07:43",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "5",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:47",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:47",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

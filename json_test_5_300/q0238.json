@@ -1,0 +1,172 @@
+{
+    "id": "q0238",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "所",
+    "context": "如：「他的作品為一般青年人所喜愛。」",
+    "possible_sense_labels": [
+        "1: 恰當的位置。",
+        "2: 約略計算之詞。多置於數量、單位之後。",
+        "3: 表示疑問。相當於「何」、「什麼」。",
+        "4: 與「為」或「被」合用，表示被動的意思。",
+        "5: 相當於「尚」、「還」。",
+        "6: 虛字。置在動詞前，暗示動作達到的事物。",
+        "7: 表示指示。相當於「此」、「這」。",
+        "8: 機關或機構的名稱。",
+        "9: 假設、如果。",
+        "10: 地方、處所。",
+        "11: 量詞。計算建築物的單位。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:17",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:17",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:19",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:19",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "易",
+                        "context": "如：「平易近人」。",
+                        "correct_sense": "平和、和藹。"
+                    },
+                    {
+                        "character": "公",
+                        "context": "如：「公諸世人」、「公諸同好」。",
+                        "correct_sense": "使多數人得知或分享。"
+                    },
+                    {
+                        "character": "潮",
+                        "context": "如：「他的手藝潮。」",
+                        "correct_sense": "技藝不高或物質的成色低劣。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:20",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:49:20",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "4",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:39",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:44",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:39",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:44",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:39",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:38:44",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

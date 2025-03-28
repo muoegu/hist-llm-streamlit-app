@@ -1,0 +1,188 @@
+{
+    "id": "q0224",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "下",
+    "context": "如：「鞠躬下臺」、「你上場換他下來。」",
+    "possible_sense_labels": [
+        "1: 量詞。計算動作次數的單位。",
+        "2: 自謙之詞。",
+        "3: 離去、退場。",
+        "4: 生、生產。",
+        "5: 頒布、傳達。",
+        "6: 內、裡面。",
+        "7: 身分微賤的。",
+        "8: 降低身分。",
+        "9: 結束工作或學習。",
+        "10: 謙抑、謙讓。",
+        "11: 放入、投入。",
+        "12: 從事、使用。",
+        "13: 投送。",
+        "14: 攻克。",
+        "15: 低處、底部。與「上」相對。",
+        "16: 輕視。",
+        "17: 方面。",
+        "18: 稱隸屬於人者、地位較低者。",
+        "19: 容納。",
+        "20: 由高至低、降落。",
+        "21: 等級低。",
+        "22: 在某個期間或時節。",
+        "23: 往、到。",
+        "24: 拆卸、除去。",
+        "25: 進入。",
+        "26: 表示動作完成或結束。",
+        "27: 在後面的。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:21",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:21",
+                                "answer": "15"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:27",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:27",
+                                "answer": "15"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "將",
+                        "context": "如：「教練一看大勢底定，把主將換下休息，讓副將上場。」",
+                        "correct_sense": "團體中的成員。"
+                    },
+                    {
+                        "character": "出",
+                        "context": "如：「出席」、「出場」。",
+                        "correct_sense": "到。"
+                    },
+                    {
+                        "character": "迭",
+                        "context": "如：「更迭」。",
+                        "correct_sense": "輪流、更替。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:30",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:56:30",
+                                "answer": "15"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:11",
+                                "answer": "21"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:21",
+                                "answer": "21"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:11",
+                                "answer": "21"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:21",
+                                "answer": "21"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:11",
+                                "answer": "12"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:21",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

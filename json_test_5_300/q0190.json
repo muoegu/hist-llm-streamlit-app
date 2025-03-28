@@ -1,0 +1,162 @@
+{
+    "id": "q0190",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "豆",
+    "context": "「祀天用瓦豆，陶器質也。」",
+    "possible_sense_labels": [
+        "1: 古代盛食品的器皿。器淺似盤，圈足，多數有蓋。盛行於商周時期，後亦作為禮器。"
+    ],
+    "origin": "鄭玄．箋",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:29",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:29",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:30",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:30",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "俎",
+                        "context": "「俎，祭宗廟器。」",
+                        "correct_sense": "古代祭祀時，用來盛祭品的禮器。"
+                    },
+                    {
+                        "character": "樸",
+                        "context": "「以木為質，未彫飾，如瓦器之坯然。」",
+                        "correct_sense": "未加工成器的木材。"
+                    },
+                    {
+                        "character": "敦",
+                        "context": "「敦，黍稷器。」",
+                        "correct_sense": "古代用來盛黍、稷、稻、粱等的器具。形狀多種，一般為三短足，圓腹，二環耳，有蓋。有的蓋子也能翻轉過來使用。圈足的敦，蓋上多有捉手。流行於春秋戰國時期。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:32",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:04:32",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:41",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:42",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:41",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:42",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:41",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:44:42",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

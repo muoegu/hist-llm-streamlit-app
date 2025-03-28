@@ -1,0 +1,159 @@
+{
+    "id": "q0233",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "累",
+    "context": "如：「勞累」、「疲累」、「我好累！」",
+    "possible_sense_labels": [
+        "1: 重疊的。",
+        "2: 負擔。",
+        "3: 操勞、使疲勞。",
+        "4: 增加。",
+        "5: 牽涉、牽連。",
+        "6: 頻頻。",
+        "7: 綑綁。",
+        "8: 弊病、過失。",
+        "9: 繩索。",
+        "10: 憂患、禍害。",
+        "11: 堆積、集聚。",
+        "12: 疲勞。",
+        "13: 傷害。",
+        "14: 屢次、連續。",
+        "15: 耗損、虧欠。",
+        "16: 託咐。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:14",
+                                "answer": "12"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:14",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:16",
+                                "answer": "12"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:16",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "疲",
+                        "context": "如：「精疲力盡」。",
+                        "correct_sense": "勞累，困乏的樣子。"
+                    },
+                    {
+                        "character": "勞",
+                        "context": "如：「勤勞」、「疲勞」。",
+                        "correct_sense": "辛勤、疲倦。"
+                    },
+                    {
+                        "character": "怠",
+                        "context": "如：「倦怠」。",
+                        "correct_sense": "疲倦、疲累。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:17",
+                                "answer": "12"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:52:17",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:45:50",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:45:56",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:45:50",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:45:56",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

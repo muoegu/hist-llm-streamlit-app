@@ -1,0 +1,175 @@
+{
+    "id": "q0084",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "放",
+    "context": "如：「放明白些」、「放聰明點」。",
+    "possible_sense_labels": [
+        "1: 弄，置於「仔細」、「明白」、「聰明」等詞前，有提請注意的意思。",
+        "2: 棄。",
+        "3: 仿效。",
+        "4: 發出。",
+        "5: 逐。",
+        "6: 依據。",
+        "7: 安置。",
+        "8: 放縱、任由。",
+        "9: 放蕩、不拘束。",
+        "10: 任官職，多指京官外任而言。",
+        "11: 打網球、排球、乒乓球時的偷襲。",
+        "12: 開、展。",
+        "13: 在一定時間後停止。",
+        "14: 至。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:04",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:04",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:05",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:05",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "些",
+                        "context": "如：「多些」、「簡單些」、「方便些」、「容易些」。",
+                        "correct_sense": "用於形容詞後面，表示比較下少許的差別。"
+                    },
+                    {
+                        "character": "肆",
+                        "context": "如：「放肆」。",
+                        "correct_sense": "任意、放縱。"
+                    },
+                    {
+                        "character": "楚",
+                        "context": "如：「清楚」。",
+                        "correct_sense": "清晰、整齊。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:07",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:00:07",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:29",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:35",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:29",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:35",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:29",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:51:35",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

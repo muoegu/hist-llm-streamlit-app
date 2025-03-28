@@ -1,0 +1,172 @@
+{
+    "id": "q0269",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "成",
+    "context": "「不以字害其成句，不以句累其全篇。」",
+    "possible_sense_labels": [
+        "1: 促成。",
+        "2: 可以。",
+        "3: 古代十里平方的土地。",
+        "4: 完整的。",
+        "5: 做好事情。",
+        "6: 現有的、舊有的。",
+        "7: 變為。",
+        "8: 量詞。計算十等分概念的單位。",
+        "9: 現有的一切。",
+        "10: 達到。",
+        "11: 構成整體的。"
+    ],
+    "origin": "宋．陸游．何君墓表",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:18",
+                                "answer": "11"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:18",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:19",
+                                "answer": "11"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:19",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "耦",
+                        "context": "「意盡而止，成篇不拘于隻耦。」",
+                        "correct_sense": "雙數。"
+                    },
+                    {
+                        "character": "文",
+                        "context": "「故說詩者不以文害辭，不以辭害志。」",
+                        "correct_sense": "文字。"
+                    },
+                    {
+                        "character": "句",
+                        "context": "「因字而生句，積句而成章。」",
+                        "correct_sense": "由兩個或兩個以上的字詞組成，含有主語、述語，能表達一個完全的意思的，稱為「句」。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:20",
+                                "answer": "11"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:20",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "4",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:46",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:50",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:46",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:50",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:46",
+                                "answer": "10"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 02:49:50",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

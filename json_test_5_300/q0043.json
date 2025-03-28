@@ -1,0 +1,151 @@
+{
+    "id": "q0043",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "陽",
+    "context": "「陽尊懷王為義帝，實不用其命。」",
+    "possible_sense_labels": [
+        "1: 偽裝、表面上。",
+        "2: 鮮明的。",
+        "3: 人間。與「陰」相對。",
+        "4: 凸的。",
+        "5: 帶正電的。",
+        "6: 太陽。",
+        "7: 山的南面或水的北面。",
+        "8: 向陽的。"
+    ],
+    "origin": "漢書．卷一．高帝紀上",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:47",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:47",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:50",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:50",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "蹈",
+                        "context": "「彼即肆然而為帝，過而為政於天下，則連有蹈東海而死耳，吾不忍為之民也。」",
+                        "correct_sense": "投身、投入。"
+                    },
+                    {
+                        "character": "澤",
+                        "context": "「殷王亦罔敢失帝，罔不配天其澤。」",
+                        "correct_sense": "恩惠。"
+                    },
+                    {
+                        "character": "宅",
+                        "context": "「亦惟助王宅天命。」",
+                        "correct_sense": "安住。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:51",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:45:51",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:36:50",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:36:50",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:36:50",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+{
+    "id": "q0072",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "達",
+    "context": "「理塞則氣不達，味眾珍則胃充，胃充則中大鞔。」",
+    "possible_sense_labels": [
+        "1: 常行不變。",
+        "2: 豁達、宏達。",
+        "3: 實現、完成。",
+        "4: 通。",
+        "5: 顯達、顯貴。",
+        "6: 告訴。",
+        "7: 表現。",
+        "8: 到。",
+        "9: 通曉事理。",
+        "10: 遍。"
+    ],
+    "origin": "呂氏春秋．孟春紀．重己",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:14",
+                                "answer": "8"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:14",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:16",
+                                "answer": "8"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:16",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "噫",
+                        "context": "「飲食不下，鬲咽不通，食則嘔，腹脹善噫。」",
+                        "correct_sense": "吃飽後，胃裡的氣體因阻鬱而上升，並且發出聲音。"
+                    },
+                    {
+                        "character": "精",
+                        "context": "「食不厭精，膾不厭細。」",
+                        "correct_sense": "良質純淨的米。"
+                    },
+                    {
+                        "character": "癖",
+                        "context": "「凡食過則結積聚，飲過則成痰癖。」",
+                        "correct_sense": "病名。中醫上指腹內生硬塊，消化不良的病症。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:17",
+                                "answer": "8"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:57:17",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "4",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:47:03",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:47:03",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:47:03",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "id": "q0140",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "文",
+    "context": "「壺子曰",
+    "possible_sense_labels": [
+        "1: 有關文學方面的才能。",
+        "2: 刺染花紋圖案。",
+        "3: 現象。",
+        "4: 溫和、優雅、不猛烈。",
+        "5: 修飾。",
+        "6: 文字。",
+        "7: 掩飾。",
+        "8: 文章。",
+        "9: 線條交錯的圖案、花紋。",
+        "10: 量詞。古代計算銅幣的單位。",
+        "11: 法令、典章。",
+        "12: 禮節、儀式。",
+        "13: 有文彩的。"
+    ],
+    "origin": "莊子．應帝王",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:22",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:22",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:24",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:24",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "追",
+                        "context": "「高子曰",
+                        "correct_sense": "鐘紐。"
+                    },
+                    {
+                        "character": "曰",
+                        "context": "「子曰",
+                        "correct_sense": "說。用於文言文。"
+                    },
+                    {
+                        "character": "然",
+                        "context": "「子曰",
+                        "correct_sense": "唯，表應答。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:25",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 09:54:25",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3"
+}

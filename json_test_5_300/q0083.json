@@ -1,0 +1,155 @@
+{
+    "id": "q0083",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "華",
+    "context": "「五色點注，華羽參差。」",
+    "possible_sense_labels": [
+        "1: 文采、文飾。",
+        "2: 光彩、光澤。",
+        "3: 植物的花朵。",
+        "4: 化妝用的粉。",
+        "5: 虛空不實的。",
+        "6: 繁盛。",
+        "7: 美麗有光彩的。",
+        "8: 文章、事物精要的部分。",
+        "9: （頭髮）花白。",
+        "10: 時光。",
+        "11: 中國、華夏的簡稱。",
+        "12: 中國的。"
+    ],
+    "origin": "三國．魏．鍾會．孔雀賦",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:13",
+                                "answer": "7"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:13",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "阿",
+                        "context": "「阿有罪，廢國法，不可。」",
+                        "correct_sense": "迎合、偏袒。"
+                    },
+                    {
+                        "character": "作",
+                        "context": "如：「作戰」、「作簡報」。",
+                        "correct_sense": "進行、舉行。"
+                    },
+                    {
+                        "character": "鑄",
+                        "context": "如：「鑄錢」、「鑄銅」。",
+                        "correct_sense": "將金屬鎔化倒入模型中冷卻凝固，做成各種器物。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:14",
+                                "answer": "7"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:14",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "地",
+                        "context": "「譬五色之錦，各以本采為地矣。」",
+                        "correct_sense": "本質、質地、底子。"
+                    },
+                    {
+                        "character": "製",
+                        "context": "「好五色衣服，製裁皆有尾形。」",
+                        "correct_sense": "剪裁。"
+                    },
+                    {
+                        "character": "駔",
+                        "context": "「同駑驘與椉駔兮，雜斑駁與闒茸。」",
+                        "correct_sense": "駿馬，高大健壯的馬。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:16",
+                                "answer": "7"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-28 10:08:16",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "7",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:39:13",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "definition_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:39:13",
+                                "answer": "14"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 02:39:13",
+                                "answer": "8"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

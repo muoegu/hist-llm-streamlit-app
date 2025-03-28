@@ -17,6 +17,8 @@ def load_json_files():
     total_questions = 0
     total_choices = 0
     total_context_length = 0
+    min_choices = float("inf")
+    max_choices = 0
 
     if not os.path.exists(RESULTS_FOLDER):
         st.error(f"❌ Folder '{RESULTS_FOLDER}' not found! Please enter a valid folder name.")
@@ -29,7 +31,10 @@ def load_json_files():
                 data = json.load(file)
 
                 total_questions += 1
-                total_choices += len(data.get("possible_sense_labels", []))
+                num_choices = len(data.get("possible_sense_labels", []))
+                total_choices += num_choices
+                min_choices = min(min_choices, num_choices)
+                max_choices = max(max_choices, num_choices)
                 total_context_length += len(data.get("context", ""))
 
                 row = {
@@ -98,13 +103,14 @@ def load_json_files():
 
     df_accuracy = pd.DataFrame(accuracy_data)
 
-
     # 📌 Summary stats
     avg_choices = round(total_choices / total_questions, 2) if total_questions > 0 else 0
     avg_context_length = round(total_context_length / total_questions, 2) if total_questions > 0 else 0
     summary_info = {
         "total_questions": total_questions,
         "avg_choices": avg_choices,
+        "min_choices": min_choices,
+        "max_choices": max_choices,
         "avg_context_length": avg_context_length
     }
 
@@ -175,10 +181,13 @@ def visualize_result_page():
 
     # 📌 Summary at top
     st.subheader("📌 Summary")
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5  = st.columns(5)
     col1.metric("Total Questions", summary_info["total_questions"])
-    col2.metric("Avg. Sense Choices", summary_info["avg_choices"])
-    col3.metric("Avg. Context Length", summary_info["avg_context_length"])
+    col2.metric("Avg. Context Length", summary_info["avg_context_length"])
+    col3.metric("Avg. Sense Choices", summary_info["avg_choices"])
+    col4.metric("Min Choices", summary_info["min_choices"])
+    col5.metric("Max Choices", summary_info["max_choices"])
+
 
     st.subheader("📄 Detailed Data")
     st.dataframe(df_details)
