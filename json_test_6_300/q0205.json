@@ -1,0 +1,105 @@
+{
+    "id": "q0205",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "鼎",
+    "context": "如：「鼎言」、「鼎臣」、「大名鼎鼎」、「這件事情，我需要你的鼎力相助，才可能成功。」",
+    "possible_sense_labels": [
+        "1: 鼎有三足，引申為三方並立。",
+        "2: 大。",
+        "3: 古代用來烹煮食物的金屬器具。圓腹、三足兩耳，亦有四足的方鼎。盛行於商、周時代。",
+        "4: 古代烹殺罪人的刑具。",
+        "5: 比喻三公、宰相、重臣等高位。",
+        "6: 古代傳國的寶器。相傳夏禹鑄九鼎以為傳受帝位的重器。",
+        "7: 方、正。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "幸",
+                        "context": "如：「幸蒙厚愛」、「幸有大家鼎力相助。」",
+                        "correct_sense": "多虧。"
+                    },
+                    {
+                        "character": "耳",
+                        "context": "「鼎，黃耳金鉉。」",
+                        "correct_sense": "凡器物兩旁附有以便於提攜的把手均稱為「耳」。"
+                    },
+                    {
+                        "character": "襄",
+                        "context": "如：「共襄盛舉」。",
+                        "correct_sense": "完成、成就。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "2",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:53",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:56",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:53",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:56",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

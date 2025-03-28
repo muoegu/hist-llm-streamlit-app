@@ -1,0 +1,110 @@
+{
+    "id": "q0175",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "清",
+    "context": "如：「眉清目秀」。",
+    "possible_sense_labels": [
+        "1: 秀美。",
+        "2: 使乾淨、使整齊。",
+        "3: 詳細、明白。",
+        "4: 單純的。",
+        "5: 澄淨、純潔。與「濁」相對。",
+        "6: 高潔、廉潔。",
+        "7: 寂靜。",
+        "8: 淨盡、一點也不留。",
+        "9: 安定、太平。",
+        "10: 結帳。",
+        "11: 整頓。",
+        "12: 點檢（清楚）。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "目",
+                        "context": "如：「耳聰目明」、「魚目混珠」、「賞心悅目」、「眉清目秀」。",
+                        "correct_sense": "眼睛。"
+                    },
+                    {
+                        "character": "俊",
+                        "context": "如：「俊俏」。",
+                        "correct_sense": "容貌秀美。"
+                    },
+                    {
+                        "character": "皓",
+                        "context": "如：「皓髮」、「明眸皓齒」。",
+                        "correct_sense": "白、潔白。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:35:38",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:35:42",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:35:38",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:35:42",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "id": "q0138",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "蓋",
+    "context": "如：「英雄蓋世」。",
+    "possible_sense_labels": [
+        "1: 超越。",
+        "2: 覆蓋、遮蔽。",
+        "3: 發語詞，提起下文，無義。",
+        "4: 乃是、實在是。",
+        "5: 吹牛、胡扯。",
+        "6: 茅草。",
+        "7: 加上去、加在上面。",
+        "8: 搭建、構築。",
+        "9: 有覆蓋功能的東西。",
+        "10: 豈、為何。",
+        "11: 大概。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "烈",
+                        "context": "如：「烈士」。",
+                        "correct_sense": "剛直、正義。"
+                    },
+                    {
+                        "character": "耀",
+                        "context": "如：「榮耀」。",
+                        "correct_sense": "比喻榮譽。"
+                    },
+                    {
+                        "character": "殊",
+                        "context": "如：「殊榮」。",
+                        "correct_sense": "特別的、異常的。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:51",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:51",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "id": "q0162",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "舞",
+    "context": "如：「舞文弄墨」。",
+    "possible_sense_labels": [
+        "1: 賣弄、玩弄。",
+        "2: 耍動、揮動。",
+        "3: 表演舞蹈。",
+        "4: 一種配合音樂節奏移動身體，表演各種姿態的藝術。",
+        "5: 飛揚、飛翔。",
+        "6: 搞、弄、忙。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "墨",
+                        "context": "如：「胸無點墨」、「惜墨如金」、「舞文弄墨」。",
+                        "correct_sense": "文字、文章或知識。"
+                    },
+                    {
+                        "character": "吟",
+                        "context": "如：「吟詠」。",
+                        "correct_sense": "詠、誦。"
+                    },
+                    {
+                        "character": "詠",
+                        "context": "如：「吟詠」。",
+                        "correct_sense": "歌唱，以充滿抑揚頓挫的語調吟唱。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:23",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:25",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:23",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:25",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

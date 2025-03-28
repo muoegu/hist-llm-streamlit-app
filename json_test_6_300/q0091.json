@@ -1,0 +1,96 @@
+{
+    "id": "q0091",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "單",
+    "context": "「和帝即位，分遣使者，皆微服單行。」",
+    "possible_sense_labels": [
+        "1: 孤獨的、獨自一人的。",
+        "2: 單層的布或衣物。",
+        "3: 薄弱、孤零。",
+        "4: 衣物是孤層的。",
+        "5: 記載事物的紙張。",
+        "6: 僅、只。",
+        "7: 零的代稱。",
+        "8: 單獨、一個。與「複」相對。",
+        "9: 不複雜、少變化。",
+        "10: 奇數的。與「雙」相對。"
+    ],
+    "origin": "後漢書．卷八十二．方術傳上．李郃傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "豫",
+                        "context": "「及和帝即位，轉中常侍，豫參帷幄。」",
+                        "correct_sense": "參與。"
+                    },
+                    {
+                        "character": "揚",
+                        "context": "「孝昭即位，遣三道使搜揚人物。」",
+                        "correct_sense": "推薦。"
+                    },
+                    {
+                        "character": "釐",
+                        "context": "「或懷釐而謁帝，或披褐而負薪。」",
+                        "correct_sense": "福氣、吉祥。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:30:00",
+                                "answer": "12"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:30:00",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

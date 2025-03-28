@@ -1,0 +1,108 @@
+{
+    "id": "q0300",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "去",
+    "context": "「譬如朝露，去日苦多。」",
+    "possible_sense_labels": [
+        "1: 過去的。",
+        "2: 除掉。",
+        "3: 往、到。與「來」相對。",
+        "4: 表示事情的進行。相當於「啊」、「了」。",
+        "5: 失掉。",
+        "6: 離開。",
+        "7: 送、發出。",
+        "8: 距離。",
+        "9: 放棄。",
+        "10: 死亡。"
+    ],
+    "origin": "文選．曹操．短歌行",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "陽",
+                        "context": "「湛湛露斯，匪陽不晞。」",
+                        "correct_sense": "太陽。"
+                    },
+                    {
+                        "character": "瘠",
+                        "context": "「一朝蒙霧露，分作溝中瘠。」",
+                        "correct_sense": "腐肉、腐屍。"
+                    },
+                    {
+                        "character": "散",
+                        "context": "「故至安之世，法如朝露，純樸不散。」",
+                        "correct_sense": "雜亂、沒有規則。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:53",
+                                "answer": "12"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:56",
+                                "answer": "10"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:53",
+                                "answer": "9"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:56",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

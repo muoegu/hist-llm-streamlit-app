@@ -1,0 +1,105 @@
+{
+    "id": "q0007",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "徼",
+    "context": "「其候徼支繚，其竟關之政盡察。」",
+    "possible_sense_labels": [
+        "1: 巡察。",
+        "2: 攔阻、攔截。",
+        "3: 小路。",
+        "4: 招致。",
+        "5: 邊界、邊塞。",
+        "6: 要求。",
+        "7: 抄襲、竊取。"
+    ],
+    "origin": "荀子．富國",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "候",
+                        "context": "「亭候，伺候望敵之所。」",
+                        "correct_sense": "用來瞭望、監視敵情的碉堡。"
+                    },
+                    {
+                        "character": "按",
+                        "context": "「爰整其旅，以按徂旅。」",
+                        "correct_sense": "抑止、擱置。"
+                    },
+                    {
+                        "character": "考",
+                        "context": "「王乃時巡，考制度于四岳。」",
+                        "correct_sense": "探究、研究。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:25",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:27",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:25",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:27",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

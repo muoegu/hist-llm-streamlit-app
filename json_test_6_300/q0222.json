@@ -1,0 +1,96 @@
+{
+    "id": "q0222",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "絡",
+    "context": "「五馬如飛龍，青絲結金絡。」",
+    "possible_sense_labels": [
+        "1: 套住。",
+        "2: 馬籠頭。",
+        "3: 包羅。",
+        "4: 綿絮、粗綿。",
+        "5: 維繫、聯繫。",
+        "6: 網。",
+        "7: 瓜果內的網狀纖維。",
+        "8: 繩索。",
+        "9: 中醫上指人體的血管和神經系統。",
+        "10: 纏繞。"
+    ],
+    "origin": "唐．李白．陌上桑詩",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "馳",
+                        "context": "「五色並馳，不可殫形。」",
+                        "correct_sense": "施展。"
+                    },
+                    {
+                        "character": "縷",
+                        "context": "「星冠攢玉，鶴氅縷金。」",
+                        "correct_sense": "刺繡。"
+                    },
+                    {
+                        "character": "翠",
+                        "context": "「孔翠群翔，犀象競馳。」",
+                        "correct_sense": "翠鳥的簡稱。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "2",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:43:17",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:43:17",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

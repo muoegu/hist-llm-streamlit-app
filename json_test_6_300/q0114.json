@@ -1,0 +1,94 @@
+{
+    "id": "q0114",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "譜",
+    "context": "如：「家譜」、「年譜」。",
+    "possible_sense_labels": [
+        "1: 記載人、事、物而分類編列的書。",
+        "2: 記錄一些準則與範例，讓人模仿學習的書冊。",
+        "3: 陳述。",
+        "4: 按歌詞編寫樂曲。",
+        "5: 記錄世系。",
+        "6: 架子、排場。",
+        "7: 特指樂曲旋律的紀錄本子。",
+        "8: 大致的規矩或原則。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "年",
+                        "context": "如：「年鑑」、「年表」、「年刊」、「年產量」。",
+                        "correct_sense": "每年。"
+                    },
+                    {
+                        "character": "書",
+                        "context": "如：「家書」、「情書」。",
+                        "correct_sense": "信件。"
+                    },
+                    {
+                        "character": "歷",
+                        "context": "如：「歷代」、「歷屆」、「歷史」、「歷年」。",
+                        "correct_sense": "過去、已經過的。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:22",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:42:22",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

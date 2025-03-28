@@ -1,0 +1,106 @@
+{
+    "id": "q0030",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "皮",
+    "context": "如：「獸皮」、「皮開肉綻」、「樹皮」。",
+    "possible_sense_labels": [
+        "1: 動植物體表的一層組織。",
+        "2: 厚顏、沒有羞恥心。",
+        "3: 性情頑劣不聽話。",
+        "4: 很薄的東西。",
+        "5: 皮製的。",
+        "6: 物的表面。",
+        "7: 包裝東西的外皮，以為保護或美觀用。",
+        "8: 有彈性的。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "革",
+                        "context": "如：「皮革」。",
+                        "correct_sense": "去毛且經過加工處理的獸皮。"
+                    },
+                    {
+                        "character": "膚",
+                        "context": "如：「皮膚」、「切膚之痛」。",
+                        "correct_sense": "身體的表皮。"
+                    },
+                    {
+                        "character": "脫",
+                        "context": "如：「脫皮」、「脫髮」。",
+                        "correct_sense": "掉落。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:37:19",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:37:21",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:37:19",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:37:21",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "id": "q0043",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "命",
+    "context": "「操行善惡者，性也；禍福吉凶者，命也。」",
+    "possible_sense_labels": [
+        "1: 先天注定的窮通得失本分，不是後天所能改變的。",
+        "2: 上級對下級的指示。",
+        "3: 生物生存的機能。",
+        "4: 取定。",
+        "5: 差遣、下命令。",
+        "6: 以為。"
+    ],
+    "origin": "漢．王充．論衡．命義",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "享",
+                        "context": "「為善的受貧窮更命短，造惡的享富貴又壽延。」",
+                        "correct_sense": "受用、擁有。"
+                    },
+                    {
+                        "character": "報",
+                        "context": "「為善者天報之以福，為不善者天報之以禍。」",
+                        "correct_sense": "回應、酬答。"
+                    },
+                    {
+                        "character": "政",
+                        "context": "「順其類者謂之福，逆其類者謂之禍，夫是之謂天政。」",
+                        "correct_sense": "法則、規則。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:27",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:29",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:27",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:32:29",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

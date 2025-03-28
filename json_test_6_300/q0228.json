@@ -1,0 +1,109 @@
+{
+    "id": "q0228",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "所",
+    "context": "如：「他的作品為一般青年人所喜愛。」",
+    "possible_sense_labels": [
+        "1: 與「為」或「被」合用，表示被動的意思。",
+        "2: 約略計算之詞。多置於數量、單位之後。",
+        "3: 恰當的位置。",
+        "4: 量詞。計算建築物的單位。",
+        "5: 機關或機構的名稱。",
+        "6: 虛字。置在動詞前，暗示動作達到的事物。",
+        "7: 假設、如果。",
+        "8: 表示指示。相當於「此」、「這」。",
+        "9: 表示疑問。相當於「何」、「什麼」。",
+        "10: 相當於「尚」、「還」。",
+        "11: 地方、處所。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "易",
+                        "context": "如：「平易近人」。",
+                        "correct_sense": "平和、和藹。"
+                    },
+                    {
+                        "character": "公",
+                        "context": "如：「公諸世人」、「公諸同好」。",
+                        "correct_sense": "使多數人得知或分享。"
+                    },
+                    {
+                        "character": "潮",
+                        "context": "如：「他的手藝潮。」",
+                        "correct_sense": "技藝不高或物質的成色低劣。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:26",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:29",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:26",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:41:29",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

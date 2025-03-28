@@ -1,0 +1,107 @@
+{
+    "id": "q0282",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "思",
+    "context": "如：「情思」、「愁思」。",
+    "possible_sense_labels": [
+        "1: 心緒、心情。",
+        "2: 悲悼。",
+        "3: 考慮。",
+        "4: 想念、懷念。",
+        "5: 䯱思：鬍鬚多的樣子。",
+        "6: 用於句中，無義。",
+        "7: 想法、意念。",
+        "8: 用於句末，相當於「啊」。",
+        "9: 用於句首，無義。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "慕",
+                        "context": "如：「思慕」。",
+                        "correct_sense": "思念、想念。"
+                    },
+                    {
+                        "character": "緒",
+                        "context": "如：「情緒」、「愁緒」。",
+                        "correct_sense": "心念、心境。"
+                    },
+                    {
+                        "character": "愁",
+                        "context": "如：「離愁」、「鄉愁」。",
+                        "correct_sense": "憂傷的心緒。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:34",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:36",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:34",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:36",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

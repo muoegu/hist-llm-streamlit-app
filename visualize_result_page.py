@@ -5,13 +5,12 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 
-folder_input = "json_test_4_300"
-RESULTS_FOLDER = folder_input.strip()
-
-def load_json_files():
+def load_json_files(folder_input):
     """Load all JSON files and return detailed DataFrame, accuracy summary, and stats"""
     data_list = []
     accuracy_dict = {}
+
+    RESULTS_FOLDER = folder_input.strip()
 
     # 📊 集計用変数
     total_questions = 0
@@ -93,7 +92,6 @@ def load_json_files():
             error_rate = round((total - correct) / total * 100, 2) if total > 0 else 0
 
             accuracy_data.append({
-                # "Error Rate (%)": error_rate,  # ✅ 新カラム
                 "Model": model,
                 "Method": method,
                 "Correct": correct,
@@ -173,7 +171,10 @@ def plot_accuracy_bar_chart(df_accuracy):
 def visualize_result_page():
     st.title("WSD Result Visualization")
 
-    df_details, df_accuracy, summary_info = load_json_files()
+    # ✅ ラジオボタンでフォルダ選択
+    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300"])
+
+    df_details, df_accuracy, summary_info = load_json_files(folder_input)
 
     if df_details.empty:
         st.write("📂 No JSON files found in the target folder.")
@@ -181,13 +182,14 @@ def visualize_result_page():
 
     # 📌 Summary at top
     st.subheader("📌 Summary")
-    col1, col2, col3, col4, col5  = st.columns(5)
+    col1, col2, col3 = st.columns(3)
     col1.metric("Total Questions", summary_info["total_questions"])
-    col2.metric("Avg. Context Length", summary_info["avg_context_length"])
-    col3.metric("Avg. Sense Choices", summary_info["avg_choices"])
+    col2.metric("Avg. Sense Choices", summary_info["avg_choices"])
+    col3.metric("Avg. Context Length", summary_info["avg_context_length"])
+
+    col4, col5 = st.columns(2)
     col4.metric("Min Choices", summary_info["min_choices"])
     col5.metric("Max Choices", summary_info["max_choices"])
-
 
     st.subheader("📄 Detailed Data")
     st.dataframe(df_details)

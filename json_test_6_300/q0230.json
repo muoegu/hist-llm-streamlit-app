@@ -1,0 +1,111 @@
+{
+    "id": "q0230",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "天",
+    "context": "如：「春天」、「三伏天」、「黃梅天」。",
+    "possible_sense_labels": [
+        "1: 時節、季節。",
+        "2: 自然的、天然的。",
+        "3: 比喻宇宙萬物的主宰。有時指大自然、有時指命運、有時指天神等。",
+        "4: 數目極大的。",
+        "5: 量詞。計算時間的單位。一天有二十四小時。",
+        "6: 自然。",
+        "7: 氣候。",
+        "8: 一晝夜的時間。",
+        "9: 日月星辰所羅列的空間，即天空。",
+        "10: 不可或缺的事物。",
+        "11: 白天或一天中的某一段時間。",
+        "12: 很、非常。",
+        "13: 宗教指神靈所住的世界。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "季",
+                        "context": "如：「春季」、「夏季」。",
+                        "correct_sense": "計時的名稱。一季有三個月。"
+                    },
+                    {
+                        "character": "季",
+                        "context": "如：「季春」、「季冬」。",
+                        "correct_sense": "末了的。"
+                    },
+                    {
+                        "character": "季",
+                        "context": "如：「花季」、「雨季」、「球季」、「旺季」、「淡季」。",
+                        "correct_sense": "一個固定的時期。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:44:45",
+                                "answer": "7"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:44:48",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:44:45",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:44:48",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "id": "q0161",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "信",
+    "context": "如：「書信」、「平信」、「掛號信」。",
+    "possible_sense_labels": [
+        "1: 書札、書簡。",
+        "2: 確實、的確、果真。",
+        "3: 連宿兩晚。",
+        "4: 聽從、不懷疑。",
+        "5: 符契、憑證。",
+        "6: 隨意、任憑。",
+        "7: 誠實不欺。",
+        "8: 知曉、知道。",
+        "9: 消息、音訊。",
+        "10: 陳述表白。",
+        "11: 伸直、舒展。",
+        "12: 敬仰、崇奉。",
+        "13: 使者、送信件的人。"
+    ],
+    "origin": "",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "簡",
+                        "context": "如：「書簡」。",
+                        "correct_sense": "書信。"
+                    },
+                    {
+                        "character": "封",
+                        "context": "如：「一封信」。",
+                        "correct_sense": "量詞。計算包裹或裝上封套物件的單位。"
+                    },
+                    {
+                        "character": "寄",
+                        "context": "如：「寄信」、「寄郵包」、「寄語白雲」。",
+                        "correct_sense": "傳達言語、書信、心意等。今多指透過郵遞傳送。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:07",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:10",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:07",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-28 07:40:10",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

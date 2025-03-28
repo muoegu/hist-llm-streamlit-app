@@ -1,0 +1,93 @@
+{
+    "id": "q0286",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "薦",
+    "context": "「韋絮薦輪，侍婢以五采絲輓顯，游戲第中。」",
+    "possible_sense_labels": [
+        "1: 藉、襯墊。",
+        "2: 呈獻、進獻。",
+        "3: 屢次、重複。",
+        "4: 草蓆、草墊。",
+        "5: 推舉。",
+        "6: 獸類所吃的草。",
+        "7: 祭品。"
+    ],
+    "origin": "漢書．卷六十八．霍光傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {}
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "辟",
+                        "context": "「今夫蜀，西辟之國，而戎狄之長也。」",
+                        "correct_sense": "荒遠幽隱的地方。"
+                    },
+                    {
+                        "character": "地",
+                        "context": "「自負才地高華，恆有宰輔之望。」",
+                        "correct_sense": "地位、位置。"
+                    },
+                    {
+                        "character": "達",
+                        "context": "如：「達官貴人」。",
+                        "correct_sense": "顯達、顯貴。"
+                    }
+                ],
+                "result": {}
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "按",
+                        "context": "「忽有一妓，抱胡琴立於筵前，轉袖調絃，獨奏一曲，纖手斜拈，輕敲慢按。」",
+                        "correct_sense": "彈奏。"
+                    },
+                    {
+                        "character": "慢",
+                        "context": "「輕攏慢撚抹復挑，初為霓裳後六么。」",
+                        "correct_sense": "遲緩的。"
+                    },
+                    {
+                        "character": "補",
+                        "context": "「侍婢賣珠迴，牽蘿補茅屋。」",
+                        "correct_sense": "將破裂、破損的地方修好。"
+                    }
+                ],
+                "result": {}
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:27",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-28 07:33:27",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
