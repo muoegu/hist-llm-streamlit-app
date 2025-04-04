@@ -1,0 +1,232 @@
+{
+    "id": "q0474",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "移",
+    "context": "諸司相質其制有三：一曰關，二曰制，三曰移。",
+    "possible_sense_labels": [
+        "1: 施予、贈送。",
+        "2: 去除。",
+        "3: 一種官方文書的舊稱，行文於平行的對等單位之間。"
+    ],
+    "origin": "新唐書．卷四十六．百官志一",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:17:53",
+                                "answer": "3"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 20:46:32",
+                                "answer": "2"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:18:00",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:18:00",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:31",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:32",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:33",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:16:07",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "曼",
+                        "context": "侯同曼聲之歌，憤於志，積於內，盈而發音。",
+                        "correct_sense": "長。"
+                    },
+                    {
+                        "character": "淵",
+                        "context": "適長沙，觀屈原所自沉淵，未嘗不垂涕，想見其為人。",
+                        "correct_sense": "深水、深潭。"
+                    },
+                    {
+                        "character": "謁",
+                        "context": "謁者，若後人書刺，自言爵里姓名，並列所白事。",
+                        "correct_sense": "名片。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:18:01",
+                                "answer": "1"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 20:46:35",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:18:16",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:18:17",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:35",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:37",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:40",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:16:08",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "復",
+                        "context": "三去相，三復位。",
+                        "correct_sense": "還原，再回到原來的樣子。"
+                    },
+                    {
+                        "character": "敕",
+                        "context": "凡上之逮下，其制有六：一曰制，二曰敕，三曰冊，天子用之。",
+                        "correct_sense": "帝王的詔書。"
+                    },
+                    {
+                        "character": "寺",
+                        "context": "其官司之別，曰省、曰臺、曰寺、曰監、曰衛、曰府，各統其屬，以分職定位。",
+                        "correct_sense": "古代的官舍、官署。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:42",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:43",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:45",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:46:45",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:16:10",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:28:16",
+                                "answer": "7"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 16:28:18",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:28:16",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 16:28:18",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

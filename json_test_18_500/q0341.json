@@ -1,0 +1,221 @@
+{
+    "id": "q0341",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "奪",
+    "context": "本謂膺賢，遣子師之，豈可以漏奪名籍，苟安而已！",
+    "possible_sense_labels": [
+        "1: 強取。",
+        "2: 錯過。",
+        "3: 脫漏、漏掉。",
+        "4: 耀眼、眩目。"
+    ],
+    "origin": "後漢書．卷六十七．黨錮傳．李膺傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:23",
+                                "answer": "2"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 20:24:59",
+                                "answer": "2"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:23",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:24",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:24:57",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:24:59",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:02",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:10:46",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "曼",
+                        "context": "侯同曼聲之歌，憤於志，積於內，盈而發音。",
+                        "correct_sense": "長。"
+                    },
+                    {
+                        "character": "淵",
+                        "context": "適長沙，觀屈原所自沉淵，未嘗不垂涕，想見其為人。",
+                        "correct_sense": "深水、深潭。"
+                    },
+                    {
+                        "character": "謁",
+                        "context": "謁者，若後人書刺，自言爵里姓名，並列所白事。",
+                        "correct_sense": "名片。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:24",
+                                "answer": "1"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 20:25:03",
+                                "answer": "4"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:25",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:09:25",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:02",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:05",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:05",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:10:48",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "戛",
+                        "context": "不率大戛，矧惟外庶子訓人。",
+                        "correct_sense": "常禮、常法。"
+                    },
+                    {
+                        "character": "餌",
+                        "context": "制國而令子適足以為餌，豈可謂工哉！",
+                        "correct_sense": "引誘人的事物。"
+                    },
+                    {
+                        "character": "弔",
+                        "context": "不鬻智以干祿，不辭爵以弔名。",
+                        "correct_sense": "求取、提取。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:05",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:07",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:07",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 20:25:11",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:10:49",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:23:54",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:23:54",
+                                "answer": "8"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

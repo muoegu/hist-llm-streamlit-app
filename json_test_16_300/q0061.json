@@ -1,0 +1,257 @@
+{
+    "id": "q0061",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "優",
+    "context": "（李通）自為宰相，謝病不視事，連年乞骸骨，帝每優寵之。",
+    "possible_sense_labels": [
+        "1: 寬厚。",
+        "2: 悠閑。",
+        "3: 演戲的人。",
+        "4: 充沛、富饒。"
+    ],
+    "origin": "後漢書．卷十五．李通傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:10",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:10",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:19",
+                                "answer": "2"
+                            },
+                            "2": {
+                                "created_at": "2025-04-04 04:42:25",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:20",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:20",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:18:01",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:25:35",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:42:25",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 05:00:51",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "曼",
+                        "context": "侯同曼聲之歌，憤於志，積於內，盈而發音。",
+                        "correct_sense": "長。"
+                    },
+                    {
+                        "character": "淵",
+                        "context": "適長沙，觀屈原所自沉淵，未嘗不垂涕，想見其為人。",
+                        "correct_sense": "深水、深潭。"
+                    },
+                    {
+                        "character": "謁",
+                        "context": "謁者，若後人書刺，自言爵里姓名，並列所白事。",
+                        "correct_sense": "名片。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:12",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:12",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:21",
+                                "answer": "1"
+                            },
+                            "2": {
+                                "created_at": "2025-04-04 04:42:26",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:21",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 06:06:21",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:18:02",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:25:44",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:42:26",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 05:00:52",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "嗽",
+                        "context": "文帝嘗病癰，鄧通常為上嗽吮之。",
+                        "correct_sense": "以口吸吮。"
+                    },
+                    {
+                        "character": "疾",
+                        "context": "老臣病足，曾不能疾走，不得見久矣。",
+                        "correct_sense": "急速、猛烈。"
+                    },
+                    {
+                        "character": "篤",
+                        "context": "臣欲奉詔奔馳，則劉病日篤。",
+                        "correct_sense": "病勢沉重。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:13",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:39:13",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:18:02",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:25:59",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:42:26",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:42:26",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 05:00:53",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 06:35:24",
+                                "answer": "9"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 06:35:24",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

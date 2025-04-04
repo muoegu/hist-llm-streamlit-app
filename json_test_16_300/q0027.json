@@ -1,0 +1,269 @@
+{
+    "id": "q0027",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "率",
+    "context": "竟陵王子良嘗夜集學士，刻燭為詩，四韻者則刻一寸，以此為率。",
+    "possible_sense_labels": [
+        "1: 準則、法度。",
+        "2: 遵循。",
+        "3: 計算。",
+        "4: 大約、通常。"
+    ],
+    "origin": "南史．卷五十九．王僧孺傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:36",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:36",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:35",
+                                "answer": "4"
+                            },
+                            "2": {
+                                "created_at": "2025-04-04 04:39:47",
+                                "answer": "2"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:35",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:35",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:14:45",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 03:36:40",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:39:47",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:53:58",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "曼",
+                        "context": "侯同曼聲之歌，憤於志，積於內，盈而發音。",
+                        "correct_sense": "長。"
+                    },
+                    {
+                        "character": "淵",
+                        "context": "適長沙，觀屈原所自沉淵，未嘗不垂涕，想見其為人。",
+                        "correct_sense": "深水、深潭。"
+                    },
+                    {
+                        "character": "謁",
+                        "context": "謁者，若後人書刺，自言爵里姓名，並列所白事。",
+                        "correct_sense": "名片。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:38",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:38",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:36",
+                                "answer": "2"
+                            },
+                            "2": {
+                                "created_at": "2025-04-04 04:39:48",
+                                "answer": "1"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:36",
+                                "answer": "Error"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 05:53:36",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:14:45",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 03:36:48",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:39:47",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:54:01",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "良",
+                        "context": "古人思炳燭夜遊，良有以也。",
+                        "correct_sense": "確實、果然，表示肯定。"
+                    },
+                    {
+                        "character": "爾",
+                        "context": "許掾嘗詣簡文，爾夜風恬月朗，乃共作曲室中語。",
+                        "correct_sense": "此、這。"
+                    },
+                    {
+                        "character": "鞭",
+                        "context": "今宵洞房花燭夜，試看狀元一條鞭。",
+                        "correct_sense": "俗稱雄性動物的生殖器官。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-03-31 13:35:40",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-04 02:14:46",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-04 03:36:57",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:39:48",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:39:48",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 04:54:02",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 06:29:50",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 06:29:53",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 06:29:50",
+                                "answer": "11"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 06:29:53",
+                                "answer": "11"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

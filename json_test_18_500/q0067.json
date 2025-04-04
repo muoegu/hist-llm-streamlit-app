@@ -1,0 +1,232 @@
+{
+    "id": "q0067",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "判",
+    "context": "除鎮安武勝軍節度使、司徒兼侍中、判相州。",
+    "possible_sense_labels": [
+        "1: 古稱高位兼低職或出任地方官。如唐代宰相判六軍十二衛事，宋以宰相判樞密院。",
+        "2: 斷語。",
+        "3: 文體的一種。仿判獄的文詞，可見其推理、辯駁的能力。科舉取士，亦以試判。"
+    ],
+    "origin": "宋史．卷三一二．韓琦傳",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:48",
+                                "answer": "1"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 21:25:10",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:48",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:49",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:10",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:10",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:13",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:25:45",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "曼",
+                        "context": "侯同曼聲之歌，憤於志，積於內，盈而發音。",
+                        "correct_sense": "長。"
+                    },
+                    {
+                        "character": "淵",
+                        "context": "適長沙，觀屈原所自沉淵，未嘗不垂涕，想見其為人。",
+                        "correct_sense": "深水、深潭。"
+                    },
+                    {
+                        "character": "謁",
+                        "context": "謁者，若後人書刺，自言爵里姓名，並列所白事。",
+                        "correct_sense": "名片。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:49",
+                                "answer": "1"
+                            },
+                            "2": {
+                                "created_at": "2025-04-03 21:25:14",
+                                "answer": "3"
+                            }
+                        },
+                        "llama2-chinese:13b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:51",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen:7b": {
+                            "1": {
+                                "created_at": "2025-03-31 17:36:53",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:14",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:16",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:17",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:25:47",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "尚",
+                        "context": "襄平侯通尚符節，乃令持節矯內太尉北軍。",
+                        "correct_sense": "主管其事。"
+                    },
+                    {
+                        "character": "督",
+                        "context": "軍征，校尉一統於督。",
+                        "correct_sense": "大將。"
+                    },
+                    {
+                        "character": "署",
+                        "context": "成都平，以亮為軍師將軍，署左將軍府事。",
+                        "correct_sense": "暫代或試充某種職務。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:17",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.2:3b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:19",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:latest": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:19",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-03 21:25:19",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-04 06:25:48",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:36:06",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 16:36:08",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-03-31 16:36:06",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-03-31 16:36:08",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

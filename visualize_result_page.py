@@ -126,7 +126,7 @@ def plot_accuracy_bar_chart(df_accuracy):
     # X-axis order
     method_order = [
         "definition", "definition_token", "example_token",
-        "zero_shot", "fixed_few_shot_3", "dynamic_few_shot_3_guwenBERT"
+        "zero_shot", "fixed_few_shot_3", "dynamic_few_shot_3_openAI" #,"dynamic_few_shot_3_guwenBERT"
     ]
     df_plot["Method"] = pd.Categorical(df_plot["Method"], categories=method_order, ordered=True)
 
@@ -172,7 +172,7 @@ def visualize_result_page():
     st.title("WSD Result Visualization")
 
     # ✅ ラジオボタンでフォルダ選択
-    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300", "json_test_7_300"])
+    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300", "json_test_7_300", "json_test_16_300", "json_test_17_300", "json_test_18_500"])
 
     df_details, df_accuracy, summary_info = load_json_files(folder_input)
 
