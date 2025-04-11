@@ -15,6 +15,7 @@ def load_json_files(folder_input):
     # 📊 集計用変数
     total_questions = 0
     total_choices = 0
+    total_possible_sense_labels = 0  
     total_context_length = 0
     min_choices = float("inf")
     max_choices = 0
@@ -30,8 +31,10 @@ def load_json_files(folder_input):
                 data = json.load(file)
 
                 total_questions += 1
-                num_choices = len(data.get("possible_sense_labels", []))
+                possible_sense_labels = data.get("possible_sense_labels", [])
+                num_choices = len(possible_sense_labels)
                 total_choices += num_choices
+                total_possible_sense_labels += num_choices  
                 min_choices = min(min_choices, num_choices)
                 max_choices = max(max_choices, num_choices)
                 total_context_length += len(data.get("context", ""))
@@ -102,7 +105,7 @@ def load_json_files(folder_input):
     df_accuracy = pd.DataFrame(accuracy_data)
 
     # 📌 Summary stats
-    avg_choices = round(total_choices / total_questions, 2) if total_questions > 0 else 0
+    avg_choices = round(total_possible_sense_labels / total_questions, 2) if total_questions > 0 else 0  
     avg_context_length = round(total_context_length / total_questions, 2) if total_questions > 0 else 0
     summary_info = {
         "total_questions": total_questions,
@@ -115,8 +118,8 @@ def load_json_files(folder_input):
     return df_details, df_accuracy, summary_info
 
 
-def plot_accuracy_bar_chart(df_accuracy):
-    """Plot bar chart by Method (x-axis), color = Model"""
+def plot_accuracy_bar_chart(df_accuracy, avg_choices):
+    """Plot bar chart by Method (x-axis), color = Model, and add Chance Level line"""
     if df_accuracy.empty:
         st.write("⚠️ No data available.")
         return
@@ -126,7 +129,7 @@ def plot_accuracy_bar_chart(df_accuracy):
     # X-axis order
     method_order = [
         "definition", "definition_token", "example_token",
-        "zero_shot", "fixed_few_shot_3", "dynamic_few_shot_3_openAI" #,"dynamic_few_shot_3_guwenBERT"
+        "zero_shot", "fixed_few_shot_3", "dynamic_few_shot_3_openAI"
     ]
     df_plot["Method"] = pd.Categorical(df_plot["Method"], categories=method_order, ordered=True)
 
@@ -148,6 +151,11 @@ def plot_accuracy_bar_chart(df_accuracy):
         offset = (i - len(model_names)/2) * width + width / 2
         bar = ax.bar(x + offset, grouped[model], width, label=model, color=colors(i))
         bars.append(bar)
+
+    # Add Chance Level line
+    if avg_choices > 0:
+        chance_level = round(100 / avg_choices, 2)  # Chance Level = 1 / Avg. Choices * 100
+        ax.axhline(y=chance_level, color='red', linestyle='--', linewidth=1.5, label=f"Chance Level ({chance_level}%)")
 
     ax.set_xlabel("Method", fontsize=14)
     ax.set_ylabel("Accuracy (%)", fontsize=14)
@@ -171,8 +179,8 @@ def plot_accuracy_bar_chart(df_accuracy):
 def visualize_result_page():
     st.title("WSD Result Visualization")
 
-    # ✅ ラジオボタンでフォルダ選択
-    folder_input = st.radio("Select JSON Folder", ["json_test_4_300", "json_test_5_300", "json_test_6_300", "json_test_7_300", "json_test_16_300", "json_test_17_300", "json_test_18_500"])
+    # "json_test_4_300", "json_test_5_300", "json_test_6_300", "json_test_7_300",
+    folder_input = st.radio("Select JSON Folder", [ "json_test_16_300", "json_test_17_300", "json_test_18_500"])
 
     df_details, df_accuracy, summary_info = load_json_files(folder_input)
 
@@ -198,7 +206,7 @@ def visualize_result_page():
     st.dataframe(df_accuracy)
 
     st.subheader("📈 Accuracy Comparison Chart")
-    plot_accuracy_bar_chart(df_accuracy)
+    plot_accuracy_bar_chart(df_accuracy, summary_info["avg_choices"])
 
 
 if __name__ == "__main__":
