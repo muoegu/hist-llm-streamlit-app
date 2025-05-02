@@ -1,4 +1,3 @@
-# 4. json_search.py - JSON検索関連
 import streamlit as st
 import os
 import json

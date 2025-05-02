@@ -1,4 +1,3 @@
-# 5. ui_components.py - UI表示コンポーネント
 import streamlit as st
 
 def display_summary(summary_info):

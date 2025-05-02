@@ -1,4 +1,3 @@
-# 3. analysis.py - 分析・評価関連
 import streamlit as st
 import pandas as pd
 

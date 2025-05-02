@@ -1,6 +1,4 @@
-# 複数のコンポーネントファイルに分割
 
-# 1. data_loader.py - データ読み込み関連
 import streamlit as st
 import pandas as pd
 import os
@@ -13,7 +11,6 @@ def load_json_files(folder_input):
 
     RESULTS_FOLDER = folder_input.strip()
 
-    # 📊 集計用変数
     total_questions = 0
     total_choices = 0
     total_possible_sense_labels = 0  
@@ -44,7 +41,9 @@ def load_json_files(folder_input):
                     "id": data.get("id", ""),
                     "character": data.get("character", ""),
                     "context": data.get("context", ""),
-                    "correct_sense": str(data.get("correct_sense", ""))
+                    "correct_sense": str(data.get("correct_sense", "")),
+                    "possible_sense_labels": data.get("possible_sense_labels", ""),
+                    
                 }
 
                 def process_predictions(model_dict, method_label):
@@ -86,7 +85,34 @@ def load_json_files(folder_input):
 
     df_details = pd.DataFrame(data_list)
 
-    # Accuracy summary table
+    # 各行（問題）ごとに✅の数をカウント
+    def count_correct_answers(row):
+        # _checkが付いたカラムだけを抽出
+        check_columns = [col for col in row.index if col.endswith('_check')]
+        
+        # ✅の数をカウント
+        correct_count = sum(1 for col in check_columns if row[col] == "✅")
+        
+        # 全体のモデル・手法の数
+        total_models = len(check_columns)
+        
+        # 正解率を計算（0〜100%）
+        if total_models > 0:
+            correct_rate = round((correct_count / total_models) * 100, 2)
+        else:
+            correct_rate = 0
+        
+        return pd.Series({
+            'correct_count': correct_count,
+            'total_models': total_models,
+            'problem_correct_rate': correct_rate
+        })
+
+    additional_stats = df_details.apply(count_correct_answers, axis=1)
+    df_details = pd.concat([df_details, additional_stats], axis=1)
+
+    df_details = df_details.sort_values('problem_correct_rate', ascending=False)
+
     accuracy_data = []
     for method, models in accuracy_dict.items():
         for model, values in models.items():
