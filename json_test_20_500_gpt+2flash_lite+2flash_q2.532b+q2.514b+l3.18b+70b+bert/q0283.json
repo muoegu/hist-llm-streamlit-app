@@ -1,0 +1,466 @@
+{
+    "id": "q0283",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "依",
+    "context": "雖不周於今之人兮，願依彭咸之遺則。",
+    "possible_sense_labels": [
+        "1: 按照、遵循。",
+        "2: 情況沒改變、老樣子。",
+        "3: 倚靠、倚託。"
+    ],
+    "origin": "楚辭．屈原．離騷",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:37",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:37",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:41:38",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:26:21",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:40:39",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:26",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:04",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:41:12",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:39",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:39",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:41:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:26:26",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:40:40",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:27",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:04",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:41:19",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:41:43",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:26:30",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:40:42",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:28",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:05",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:41:28",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "靖",
+                        "context": "嗟我後人，命其靡常，靖享爾位，瞻仰靡荒。",
+                        "correct_sense": "計劃、圖謀。"
+                    },
+                    {
+                        "character": "鑑",
+                        "context": "後人哀之而不鑑之。",
+                        "correct_sense": "警戒、戒勉。"
+                    },
+                    {
+                        "character": "我",
+                        "context": "述而不作，信而好古，竊比於我老彭。",
+                        "correct_sense": "表示親切之意的語詞。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:42",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:42",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:41:45",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:26:35",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:40:43",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:28",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:05",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:41:33",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "靖",
+                        "context": "嗟我後人，命其靡常，靖享爾位，瞻仰靡荒。",
+                        "correct_sense": "計劃、圖謀。"
+                    },
+                    {
+                        "character": "鑑",
+                        "context": "後人哀之而不鑑之。",
+                        "correct_sense": "警戒、戒勉。"
+                    },
+                    {
+                        "character": "我",
+                        "context": "述而不作，信而好古，竊比於我老彭。",
+                        "correct_sense": "表示親切之意的語詞。"
+                    },
+                    {
+                        "character": "竊",
+                        "context": "述而不作，信而好古，竊比於我老彭。",
+                        "correct_sense": "私下。用來謙指自己見解的不確定。"
+                    },
+                    {
+                        "character": "統",
+                        "context": "願君顧先王之宗廟，姑反國統萬人乎。",
+                        "correct_sense": "率領、總理。"
+                    },
+                    {
+                        "character": "誼",
+                        "context": "願竭力以守誼兮，雖貧窮而不改。",
+                        "correct_sense": "應有的道理或原則。"
+                    },
+                    {
+                        "character": "缺",
+                        "context": "啟祐我後人，咸以正，罔缺。",
+                        "correct_sense": "過錯、不完美的地方。"
+                    },
+                    {
+                        "character": "秉",
+                        "context": "治國不失秉，臣不如也。",
+                        "correct_sense": "權柄。"
+                    },
+                    {
+                        "character": "申",
+                        "context": "道卓遠而日忘兮，願自申而不得。",
+                        "correct_sense": "陳述、說明。"
+                    },
+                    {
+                        "character": "鏡",
+                        "context": "居今之世，志古之道，所以自鏡也。",
+                        "correct_sense": "鑑誡。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:44",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:09:44",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:41:48",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:26:41",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:40:45",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:29",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:06",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:41:42",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:44",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:45",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:44",
+                                "answer": "3"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:45",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

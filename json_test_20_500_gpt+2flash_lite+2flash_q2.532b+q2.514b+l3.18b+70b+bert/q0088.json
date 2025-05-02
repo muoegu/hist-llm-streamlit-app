@@ -1,0 +1,467 @@
+{
+    "id": "q0088",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "瓦",
+    "context": "孤城西北起高樓，碧瓦朱甍照城郭。",
+    "possible_sense_labels": [
+        "1: 覆於屋頂上，用以遮蔽風雨的建築材料。",
+        "2: 楯脊，盾背栱起如覆瓦的部分。",
+        "3: 覆瓦於屋頂。",
+        "4: 用陶土燒成的器物的總稱。"
+    ],
+    "origin": "唐．杜甫．越王樓歌",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:37",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:37",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:29:33",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:04:53",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:27:30",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:27:13",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:52:56",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 21:41:45",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:38",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:38",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:29:35",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:04:57",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:27:31",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:27:14",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:52:56",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 21:41:53",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:40",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:40",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:29:38",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:05:02",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:27:33",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:27:15",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:52:57",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 21:42:02",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "城",
+                        "context": "青山橫北郭，白水遶東城。",
+                        "correct_sense": "古時環繞京師或圍繞某一區域以供防守的大圍牆。"
+                    },
+                    {
+                        "character": "櫓",
+                        "context": "櫓，城上守禦望樓。",
+                        "correct_sense": "城上供防禦而無頂蓋的瞭望樓。"
+                    },
+                    {
+                        "character": "摧",
+                        "context": "黑雲壓城城欲摧，甲光向月金鱗開。",
+                        "correct_sense": "毀壞、崩塌。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:41",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:41",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:29:40",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:05:06",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:27:34",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:27:16",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:52:57",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 21:42:09",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "城",
+                        "context": "青山橫北郭，白水遶東城。",
+                        "correct_sense": "古時環繞京師或圍繞某一區域以供防守的大圍牆。"
+                    },
+                    {
+                        "character": "櫓",
+                        "context": "櫓，城上守禦望樓。",
+                        "correct_sense": "城上供防禦而無頂蓋的瞭望樓。"
+                    },
+                    {
+                        "character": "摧",
+                        "context": "黑雲壓城城欲摧，甲光向月金鱗開。",
+                        "correct_sense": "毀壞、崩塌。"
+                    },
+                    {
+                        "character": "飛",
+                        "context": "飛棟臨黃鶴，高窗度白雲。",
+                        "correct_sense": "高入空中的。"
+                    },
+                    {
+                        "character": "亭",
+                        "context": "登城望亭燧，翩翩飛戍旗。",
+                        "correct_sense": "守望敵情的處所。"
+                    },
+                    {
+                        "character": "芳",
+                        "context": "遠芳侵古道，晴翠連荒城。",
+                        "correct_sense": "香草、花草。"
+                    },
+                    {
+                        "character": "遜",
+                        "context": "北望山半，亦有洞南向，高少遜北巔。",
+                        "correct_sense": "比不上、不及。"
+                    },
+                    {
+                        "character": "晴",
+                        "context": "江城如畫裡，山曉望晴空。",
+                        "correct_sense": "晴朗的。"
+                    },
+                    {
+                        "character": "層",
+                        "context": "層臺累榭，臨高山些。",
+                        "correct_sense": "重疊的。"
+                    },
+                    {
+                        "character": "櫓",
+                        "context": "登艫望城遠，搖櫓過江遲。",
+                        "correct_sense": "划水使船前進的器具。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:43",
+                                "answer": "4"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:53:43",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:29:43",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:05:11",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:27:36",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:27:16",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:52:57",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 21:42:18",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:02:58",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:03:00",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:02:58",
+                                "answer": "2"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:03:00",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

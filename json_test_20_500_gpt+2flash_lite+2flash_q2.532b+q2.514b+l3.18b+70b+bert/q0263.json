@@ -1,0 +1,466 @@
+{
+    "id": "q0263",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "疾",
+    "context": "春風得意馬蹄疾，一日看盡長安花。",
+    "possible_sense_labels": [
+        "1: 快速、猛烈。",
+        "2: 急速、猛烈。",
+        "3: 憎恨。"
+    ],
+    "origin": "唐．孟郊．登科後詩",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:15",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:15",
+                                "answer": "3"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:08:23",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:25:33",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:43:32",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:06:30",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:42:33",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:22:50",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:17",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:17",
+                                "answer": "3"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:08:26",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:25:37",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:43:33",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:06:31",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:42:33",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:22:57",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:18",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:18",
+                                "answer": "3"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:08:28",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:25:42",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:43:35",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:06:32",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:42:34",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:23:04",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "飛",
+                        "context": "春城無處不飛花，寒城東風御柳斜。",
+                        "correct_sense": "飄揚。"
+                    },
+                    {
+                        "character": "總",
+                        "context": "等閒識得東風面，萬紫千紅總是春。",
+                        "correct_sense": "都。"
+                    },
+                    {
+                        "character": "卻",
+                        "context": "一片花飛減卻春，風飄萬點正愁人。",
+                        "correct_sense": "置動詞後，相當於「掉」、「去」、「了」。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:20",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:20",
+                                "answer": "3"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:08:31",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:25:46",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:43:36",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:06:32",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:42:34",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:23:11",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "飛",
+                        "context": "春城無處不飛花，寒城東風御柳斜。",
+                        "correct_sense": "飄揚。"
+                    },
+                    {
+                        "character": "總",
+                        "context": "等閒識得東風面，萬紫千紅總是春。",
+                        "correct_sense": "都。"
+                    },
+                    {
+                        "character": "卻",
+                        "context": "一片花飛減卻春，風飄萬點正愁人。",
+                        "correct_sense": "置動詞後，相當於「掉」、「去」、「了」。"
+                    },
+                    {
+                        "character": "減",
+                        "context": "一片花飛減卻春，風飄萬點正愁人。",
+                        "correct_sense": "降低、耗損。"
+                    },
+                    {
+                        "character": "萌",
+                        "context": "明風習習兮龢暖，百草萌兮華榮。",
+                        "correct_sense": "發芽。"
+                    },
+                    {
+                        "character": "控",
+                        "context": "沉醉東風裡，控驕馬，鞭裊蘆花。",
+                        "correct_sense": "操縱、支配。"
+                    },
+                    {
+                        "character": "酣",
+                        "context": "長風萬里送秋雁，對此可以酣高樓。",
+                        "correct_sense": "暢飲，盡興喝酒。"
+                    },
+                    {
+                        "character": "最",
+                        "context": "長安甲第多，處處花堪愛，良金不惜費，競取園中最。",
+                        "correct_sense": "菁華，居首要性的人或物。"
+                    },
+                    {
+                        "character": "條",
+                        "context": "攀條折春色，遠寄龍庭前。",
+                        "correct_sense": "細長的樹枝。"
+                    },
+                    {
+                        "character": "綿",
+                        "context": "想見東郊攜手日，海棠如雪柳飛綿。",
+                        "correct_sense": "形狀、質地像綿的物體。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:22",
+                                "answer": "2"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:25:22",
+                                "answer": "3"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:08:33",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:25:51",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:43:38",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:06:33",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:42:35",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:23:20",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 20:48:22",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 20:48:25",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 20:48:22",
+                                "answer": "6"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 20:48:25",
+                                "answer": "6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

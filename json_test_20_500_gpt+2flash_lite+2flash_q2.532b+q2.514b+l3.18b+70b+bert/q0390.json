@@ -1,0 +1,468 @@
+{
+    "id": "q0390",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "移",
+    "context": "南風吹山作平地，帝遣天吳移海水。",
+    "possible_sense_labels": [
+        "1: 移轉、搬遷。",
+        "2: 去除。",
+        "3: 一種官方文書的舊稱，行文於平行的對等單位之間。",
+        "4: 施予、贈送。",
+        "5: 轉變、改變。"
+    ],
+    "origin": "唐．李賀．浩歌",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:26:57",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:26:57",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:53:53",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:48:52",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:41:26",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:37",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:10",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:43:07",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:26:59",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:26:59",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:53:56",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:48:56",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:41:27",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:38",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:10",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:43:14",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:00",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:00",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:53:58",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:49:01",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:41:34",
+                                "answer": "5"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:39",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:10",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:43:21",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "奠",
+                        "context": "禹敷土隨山刊木，奠高山大川。",
+                        "correct_sense": "定、建立。"
+                    },
+                    {
+                        "character": "隨",
+                        "context": "禹敷土，隨山刊木，奠高山大川。",
+                        "correct_sense": "沿著、順著。"
+                    },
+                    {
+                        "character": "築",
+                        "context": "披峴斲楚，飛石輓土，舉築殷雷，駭汗霏雨。",
+                        "correct_sense": "擣土打牆的木杵。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:02",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:02",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:54:01",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:49:06",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:41:35",
+                                "answer": "5"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:40",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:11",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:43:28",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "奠",
+                        "context": "禹敷土隨山刊木，奠高山大川。",
+                        "correct_sense": "定、建立。"
+                    },
+                    {
+                        "character": "隨",
+                        "context": "禹敷土，隨山刊木，奠高山大川。",
+                        "correct_sense": "沿著、順著。"
+                    },
+                    {
+                        "character": "築",
+                        "context": "披峴斲楚，飛石輓土，舉築殷雷，駭汗霏雨。",
+                        "correct_sense": "擣土打牆的木杵。"
+                    },
+                    {
+                        "character": "胙",
+                        "context": "分南陽而賜田，裂東嶽而胙土。",
+                        "correct_sense": "酬答。"
+                    },
+                    {
+                        "character": "隕",
+                        "context": "庶女叫天，雷電下擊，景公臺隕，支體傷折，海水大出。",
+                        "correct_sense": "毀壞。"
+                    },
+                    {
+                        "character": "浩",
+                        "context": "湯湯洪水方割，蕩蕩懷山襄陵，浩浩滔天。",
+                        "correct_sense": "水勢盛大。"
+                    },
+                    {
+                        "character": "襄",
+                        "context": "湯湯洪水方割，蕩蕩懷山襄陵。",
+                        "correct_sense": "上、登越。"
+                    },
+                    {
+                        "character": "浸",
+                        "context": "離亭隱喬樹，溝水浸平沙。",
+                        "correct_sense": "滲透。"
+                    },
+                    {
+                        "character": "揆",
+                        "context": "堯舉八愷使主后土，以揆百事，莫不時序，地平天成。",
+                        "correct_sense": "掌管。"
+                    },
+                    {
+                        "character": "湮",
+                        "context": "昔禹之湮洪水，決江河而通四夷九州也。",
+                        "correct_sense": "堵塞。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:03",
+                                "answer": "1"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:27:03",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:54:04",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:49:10",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:41:37",
+                                "answer": "1"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:33:41",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:56:11",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:43:37",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "1",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:53",
+                                "answer": "7"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:55",
+                                "answer": "7"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:53",
+                                "answer": "1"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:55",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

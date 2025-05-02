@@ -1,0 +1,468 @@
+{
+    "id": "q0142",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "占",
+    "context": "占小善者率以錄，名一藝者無不庸。",
+    "possible_sense_labels": [
+        "1: 視察、配合。",
+        "2: 有、具有。",
+        "3: 根據徵兆以推知吉凶。",
+        "4: 據有。",
+        "5: 口傳。"
+    ],
+    "origin": "唐．韓愈．進學解",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:03:58",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:03:58",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:37:48",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:19:59",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:50:39",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:09:57",
+                                "answer": "4"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:44:18",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:56:04",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:00",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:00",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:37:50",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:20:04",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:50:40",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:09:58",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:44:18",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:56:12",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:02",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:02",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:37:53",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:20:09",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:50:42",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:09:59",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:44:18",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:56:21",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "孟",
+                        "context": "奇術技藝之人，莫敢高言孟行，以過其情。",
+                        "correct_sense": "鹵莽的、誇大的。"
+                    },
+                    {
+                        "character": "積",
+                        "context": "善不積，不足以成名。",
+                        "correct_sense": "累聚。"
+                    },
+                    {
+                        "character": "亦",
+                        "context": "畫師亦無數，好手不可遇。",
+                        "correct_sense": "雖然。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:04",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:04",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:37:55",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:20:13",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:50:43",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:10:00",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:44:19",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:56:28",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "孟",
+                        "context": "奇術技藝之人，莫敢高言孟行，以過其情。",
+                        "correct_sense": "鹵莽的、誇大的。"
+                    },
+                    {
+                        "character": "積",
+                        "context": "善不積，不足以成名。",
+                        "correct_sense": "累聚。"
+                    },
+                    {
+                        "character": "亦",
+                        "context": "畫師亦無數，好手不可遇。",
+                        "correct_sense": "雖然。"
+                    },
+                    {
+                        "character": "損",
+                        "context": "有能增損一字者，予千金。",
+                        "correct_sense": "減少。"
+                    },
+                    {
+                        "character": "掇",
+                        "context": "鑠金百溢，盜跖不掇。",
+                        "correct_sense": "拾取。"
+                    },
+                    {
+                        "character": "穎",
+                        "context": "皆當世秀穎，一時顯器。",
+                        "correct_sense": "才能出眾的人。"
+                    },
+                    {
+                        "character": "翹",
+                        "context": "凡此諸人，皆其翹秀者。",
+                        "correct_sense": "特出。"
+                    },
+                    {
+                        "character": "猥",
+                        "context": "所恃者寡，所取者猥。",
+                        "correct_sense": "眾多。"
+                    },
+                    {
+                        "character": "摩",
+                        "context": "古者富貴而名摩滅，不可勝記，唯倜儻非常之人稱焉。",
+                        "correct_sense": "消滅。"
+                    },
+                    {
+                        "character": "寵",
+                        "context": "譁眾取寵。",
+                        "correct_sense": "尊敬。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:06",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 20:04:06",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:37:58",
+                                "answer": "4"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 23:20:18",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 03:50:44",
+                                "answer": "4"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:10:00",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:44:19",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 18:56:34",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "2",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 20:51:01",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 20:51:03",
+                                "answer": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 20:51:01",
+                                "answer": "5"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 20:51:03",
+                                "answer": "5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

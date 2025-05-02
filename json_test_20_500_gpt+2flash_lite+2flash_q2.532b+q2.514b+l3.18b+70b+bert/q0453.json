@@ -1,0 +1,466 @@
+{
+    "id": "q0453",
+    "instruction": "You are an expert in ancient and modern Chinese linguistics. Given a Chinese character, its context, and possible sense labels, your task is to identify the sense label that best fits the character's usage in the given context. Provide only the number corresponding to the best sense.\n\nRespond in JSON format:\n```json\n{\n  \"label\": \"number\" // most appropriate sense label\n}\n```",
+    "character": "怯",
+    "context": "那賣水煙的一聽這話，就知道這位爺是個怯公子哥兒，便低了頭出去了。",
+    "possible_sense_labels": [
+        "1: 畏縮、害怕。",
+        "2: 虛弱、懦弱。",
+        "3: 外表或風度不大方、土土的。"
+    ],
+    "origin": "兒女英雄傳．第四回",
+    "prompts": {
+        "method": {
+            "zero_shot": {
+                "examples": [],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:46",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:46",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:11:21",
+                                "answer": "2"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:30:56",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:39:28",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:32:52",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:55:48",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:36:08",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_3": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:48",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:48",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:11:24",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:31:00",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:39:29",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:32:53",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:55:48",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:36:15",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "fixed_few_shot_10": {
+                "examples": [
+                    {
+                        "character": "仕",
+                        "context": "武王豈不仕，詒厥孫謀，以燕翼子。",
+                        "correct_sense": "工作。"
+                    },
+                    {
+                        "character": "縱",
+                        "context": "不開寤而難道兮，不別橫之與縱。",
+                        "correct_sense": "直的線、面，南北稱為「縱」。"
+                    },
+                    {
+                        "character": "援",
+                        "context": "援礪砥刀，利猶干將也。切肉肉斷，而髮不斷。",
+                        "correct_sense": "持、拿。"
+                    },
+                    {
+                        "character": "姑",
+                        "context": "商王大亂，沉于酒德，辟遠箕子，爰近姑與息。",
+                        "correct_sense": "泛稱婦女。"
+                    },
+                    {
+                        "character": "遒",
+                        "context": "淋漓百榼宴江樓，秉燭揮毫氣尚遒。",
+                        "correct_sense": "剛健、強勁有力。"
+                    },
+                    {
+                        "character": "讒",
+                        "context": "上官大夫見而欲奪之，屈平不與，因讒之。",
+                        "correct_sense": "說別人壞話，中傷他人。"
+                    },
+                    {
+                        "character": "詹",
+                        "context": "黃靈詹而訪命兮，樛天道其焉如。",
+                        "correct_sense": "至、到達。"
+                    },
+                    {
+                        "character": "辯",
+                        "context": "迷於言，惑於語，沉於辯，溺於辭。",
+                        "correct_sense": "巧言。"
+                    },
+                    {
+                        "character": "佇",
+                        "context": "「佇中衢而空軫，巾下澤而莫因。」",
+                        "correct_sense": "久立。"
+                    },
+                    {
+                        "character": "廂",
+                        "context": "相公需教把火來放在弓廂裡，不住的焙，方好。",
+                        "correct_sense": "箱篋。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:50",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:50",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:11:26",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:31:05",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:39:31",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:32:54",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:55:48",
+                                "answer": "3"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:36:22",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_3_openAI": {
+                "examples": [
+                    {
+                        "character": "眼",
+                        "context": "他起初還想賴，後來被家兄點了兩句眼，他無話說了。",
+                        "correct_sense": "關鍵、要點。"
+                    },
+                    {
+                        "character": "吐",
+                        "context": "見洒家是個和尚，他道不利市，吐一口唾走入去了。",
+                        "correct_sense": "使東西從口中出來。"
+                    },
+                    {
+                        "character": "忙",
+                        "context": "見老董事也忙完，就緩緩的走出，找著老董閒話。",
+                        "correct_sense": "做，急迫不停的做。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:52",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:52",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:11:29",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:31:10",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:39:33",
+                                "answer": "3"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:32:55",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:55:49",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:36:30",
+                                "answer": "3"
+                            }
+                        }
+                    }
+                }
+            },
+            "dynamic_few_shot_10_openAI": {
+                "examples": [
+                    {
+                        "character": "眼",
+                        "context": "他起初還想賴，後來被家兄點了兩句眼，他無話說了。",
+                        "correct_sense": "關鍵、要點。"
+                    },
+                    {
+                        "character": "吐",
+                        "context": "見洒家是個和尚，他道不利市，吐一口唾走入去了。",
+                        "correct_sense": "使東西從口中出來。"
+                    },
+                    {
+                        "character": "忙",
+                        "context": "見老董事也忙完，就緩緩的走出，找著老董閒話。",
+                        "correct_sense": "做，急迫不停的做。"
+                    },
+                    {
+                        "character": "躡",
+                        "context": "打的那丫頭一個趔趄，便躡腳兒走了。",
+                        "correct_sense": "放輕腳步行走。"
+                    },
+                    {
+                        "character": "尾",
+                        "context": "差人見那人出神，叫宦成坐著，自己悄悄尾了那人去。",
+                        "correct_sense": "追隨、跟著。"
+                    },
+                    {
+                        "character": "乍",
+                        "context": "那興兒聽見這個聲音兒，早已沒了主意了，只得乍著膽子進來。",
+                        "correct_sense": "壯著、放大。"
+                    },
+                    {
+                        "character": "刁",
+                        "context": "可巧見他刁著一根小煙袋兒，交叉著手，靠著窗臺兒，在那裡歇腿兒呢！",
+                        "correct_sense": "嘴裡銜著。"
+                    },
+                    {
+                        "character": "餬",
+                        "context": "當時兌了一萬兩銀子出來，纔餬的去了，不曾破相。",
+                        "correct_sense": "敷衍。"
+                    },
+                    {
+                        "character": "咈",
+                        "context": "那人咈然不樂道：『客人既發了個好心，卻又做脫身之計。』",
+                        "correct_sense": "忿怒。"
+                    },
+                    {
+                        "character": "刺",
+                        "context": "面刺王過，王至掩耳起走。",
+                        "correct_sense": "以尖銳的話指出別人的過失。"
+                    }
+                ],
+                "result": {
+                    "model": {
+                        "gpt-4o": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:54",
+                                "answer": "3"
+                            }
+                        },
+                        "gpt-4o-mini": {
+                            "1": {
+                                "created_at": "2025-04-15 19:29:54",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash-lite": {
+                            "1": {
+                                "created_at": "2025-04-15 21:11:31",
+                                "answer": "1"
+                            }
+                        },
+                        "gemini-2.0-flash": {
+                            "1": {
+                                "created_at": "2025-04-15 22:31:15",
+                                "answer": "2"
+                            }
+                        },
+                        "qwen2.5:32b": {
+                            "1": {
+                                "created_at": "2025-04-16 04:39:47",
+                                "answer": "Error"
+                            }
+                        },
+                        "qwen2.5:14b": {
+                            "1": {
+                                "created_at": "2025-04-16 06:32:58",
+                                "answer": "1"
+                            }
+                        },
+                        "llama3.1:8b": {
+                            "1": {
+                                "created_at": "2025-04-16 10:55:49",
+                                "answer": "2"
+                            }
+                        },
+                        "llama3.1:70b": {
+                            "1": {
+                                "created_at": "2025-04-16 22:36:37",
+                                "answer": "2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "correct_sense": "3",
+    "bert": {
+        "method": {
+            "definition": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:26",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:27",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            },
+            "example_token": {
+                "result": {
+                    "model": {
+                        "bert-base-chinese": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:26",
+                                "answer": "4"
+                            }
+                        },
+                        "guwenBERT-large": {
+                            "1": {
+                                "created_at": "2025-04-17 21:06:27",
+                                "answer": "4"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
